@@ -1,12 +1,12 @@
-Copying tests/filesys/base/sm-seq-block into /tmp/ztSUwXgR38.dsk...
-Writing command line to /tmp/UuGwrXMoSZ.dsk...
-qemu-system-i386 -hda /tmp/UuGwrXMoSZ.dsk -hdb /tmp/nZ9_D3btCN.dsk -hdc /tmp/ztSUwXgR38.dsk -m 4 -net none -monitor null -nographic
+Copying tests/filesys/base/sm-seq-block into /tmp/0kbn6TFVMY.dsk...
+Writing command line to /tmp/TsMzWEp3MU.dsk...
+qemu-system-i386 -hda /tmp/TsMzWEp3MU.dsk -hdb /tmp/0kJuDOU8b0.dsk -hdc /tmp/0kbn6TFVMY.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put sm-seq-block run sm-seq-block
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  417,792,000 loops/s.
+Calibrating timer...  419,020,800 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 104 sector (52 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -15,17 +15,17 @@ Boot complete.
 Putting 'sm-seq-block' into the file system...
 Executing 'sm-seq-block':
 # main#1: process_execute("sm-seq-block") ENTERED
+# Command line is valid
 #  parent is: 0
 # main#1: thread_create("sm-seq-block", ...) RETURNS 3
+# after create_thread 1
 # sm-seq-block#3: start_process("sm-seq-block") ENTERED
-# Loading file
+# Loading file: sm-seq-block
 # Loading done
 # sm-seq-block#3: start_process(...): load returned 1
 # sm-seq-block#3: start_process("sm-seq-block") DONE
 (sm-seq-block) begin
 (sm-seq-block) create "noodle"
-# main#1: process_execute("sm-seq-block") RETURNS 2
-# main#0: process_wait(2) ENTERED
 (sm-seq-block) open "noodle"
 (sm-seq-block) writing "noodle"
 (sm-seq-block) close "noodle"
@@ -36,15 +36,21 @@ Executing 'sm-seq-block':
 # sm-seq-block#3: process_cleanup() ENTERED
 sm-seq-block: exit(0)
 # sm-seq-block#3: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# after create_thread 4
+# main#1: process_execute("sm-seq-block") RETURNS 2
+# after create_thread 5
+# main#0: process_wait(2) ENTERED
 # main#1: process_wait(2) RETURNS 0
 Execution of 'sm-seq-block' complete.
 # Preparing to power off...
-Timer: 88 ticks
-Thread: 1 idle ticks, 76 kernel ticks, 11 user ticks
+Timer: 66 ticks
+Thread: 0 idle ticks, 61 kernel ticks, 5 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 124 reads, 255 writes
 hd1:0: 104 reads, 0 writes
-Console: 1676 characters output
+Console: 1833 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

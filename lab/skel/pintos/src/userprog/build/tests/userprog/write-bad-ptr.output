@@ -1,12 +1,12 @@
-Copying tests/userprog/write-bad-ptr into /tmp/LpOAsDkkA4.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/LpOAsDkkA4.dsk...
-Writing command line to /tmp/ASIDv0aNbg.dsk...
-qemu-system-i386 -hda /tmp/ASIDv0aNbg.dsk -hdb /tmp/YjX4mQHruD.dsk -hdc /tmp/LpOAsDkkA4.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/write-bad-ptr into /tmp/iY8fAFi_1f.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/iY8fAFi_1f.dsk...
+Writing command line to /tmp/8BEAzg8tUS.dsk...
+qemu-system-i386 -hda /tmp/8BEAzg8tUS.dsk -hdb /tmp/L0EnOoUhO0.dsk -hdc /tmp/iY8fAFi_1f.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put write-bad-ptr put sample.txt run write-bad-ptr
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
-Calibrating timer...  130,867,200 loops/s.
+Calibrating timer...  419,020,800 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 102 sector (51 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -19,12 +19,12 @@ Executing 'write-bad-ptr':
 (write-bad-ptr) open "sample.txt"
 write-bad-ptr: exit(-1)
 Execution of 'write-bad-ptr' complete.
-Timer: 68 ticks
-Thread: 0 idle ticks, 65 kernel ticks, 3 user ticks
+Timer: 67 ticks
+Thread: 0 idle ticks, 65 kernel ticks, 2 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 90 reads, 214 writes
 hd1:0: 102 reads, 0 writes
-Console: 1526 characters output
+Console: 1685 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

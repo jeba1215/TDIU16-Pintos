@@ -8,6 +8,7 @@
 #include "tests/lib.h"
 
 const char *test_name = "multi-recurse";
+int m = 30;
 
 int
 main (int argc UNUSED, char *argv[]) 

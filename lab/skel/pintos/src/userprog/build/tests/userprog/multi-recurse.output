@@ -1,11 +1,11 @@
-Copying tests/userprog/multi-recurse into /tmp/VenU3CxeXB.dsk...
-Writing command line to /tmp/htxc4JHOlQ.dsk...
-qemu-system-i386 -hda /tmp/htxc4JHOlQ.dsk -hdb /tmp/Z28qZVd0QG.dsk -hdc /tmp/VenU3CxeXB.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/multi-recurse into /tmp/pmQ3UViZW6.dsk...
+Writing command line to /tmp/SyV8U2Ix7w.dsk...
+qemu-system-i386 -hda /tmp/SyV8U2Ix7w.dsk -hdb /tmp/nhTa5bGXbE.dsk -hdc /tmp/pmQ3UViZW6.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put multi-recurse run 'multi-recurse 15'
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
-Calibrating timer...  209,510,400 loops/s.
+Calibrating timer...  419,020,800 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 112 sector (56 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -34,7 +34,7 @@ Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc01076d2
  esi=c0114e20 edi=c011b000 esp=c00b8000 ebp=c0134e34
  cs=0008 ds=0010 es=0010 ss=80a0
 Kernel PANIC at ../../userprog/exception.c:100 in kill(): Kernel bug - unexpected interrupt in kernel
-backtrace  0xc0107279 0xc010a728 0xc010a7d4 0xc01018ca 0xc0101a05 0xc01076d2 0xc010782f 0xc01035c6 0xc01096d7 0xc010aaed 0xc01018ca 0xc0101a05 0x804a50a 0x804810e 0x8048738.
+backtrace  0xc0107279 0xc010a748 0xc010a7f4 0xc01018ca 0xc0101a05 0xc01076d2 0xc010782f 0xc01035c6 0xc0109710 0xc010ab0d 0xc01018ca 0xc0101a05 0x804a50a 0x804810e 0x8048738.
 The `backtrace' program can make call stacks useful.
 Read "Backtraces" in the "Debugging Tools" chapter
 of the Pintos documentation for more information.
@@ -43,12 +43,23 @@ They will not get the chance to complete.
 Kernel PANIC recursion at ../../threads/synch.c:197 in lock_acquire().
 They will not get the chance to complete.
 Page fault at 0xcccccee0: not present error reading page in kernel context.
-Interrupt 0x0e (#PF Page-Fault Exception) at eip=0# Preparing to power off...
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc01028ca
+ cr2=cccccee0 error=00000000
+ eax=cccccee0 ebx=cccccee0 ecx=00000780 edx=000003d4
+ esi=cccccee0 edi=c010d14f esp=c0134b4c ebp=c0134af8
+ cs=0008 ds=0010 es=0010 ss=0002
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
 Kernel command line: -q -f put multi-recurse run 'multi-recurse 15'
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
-Calibrating timer...  209,510,400 loops/s.
+Calibrating timer...  314,163,200 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 112 sector (56 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -77,7 +88,7 @@ Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc01076d2
  esi=c0114e20 edi=c011b000 esp=c00b8000 ebp=c0134e34
  cs=0008 ds=0010 es=0010 ss=80a0
 Kernel PANIC at ../../userprog/exception.c:100 in kill(): Kernel bug - unexpected interrupt in kernel
-backtrace  0xc0107279 0xc010a728 0xc010a7d4 0xc01018ca 0xc0101a05 0xc01076d2 0xc010782f 0xc01035c6 0xc01096d7 0xc010aaed 0xc01018ca 0xc0101a05 0x804a50a 0x804810e 0x8048738.
+backtrace  0xc0107279 0xc010a748 0xc010a7f4 0xc01018ca 0xc0101a05 0xc01076d2 0xc010782f 0xc01035c6 0xc0109710 0xc010ab0d 0xc01018ca 0xc0101a05 0x804a50a 0x804810e 0x8048738.
 The `backtrace' program can make call stacks useful.
 Read "Backtraces" in the "Debugging Tools" chapter
 of the Pintos documentation for more information.
@@ -85,12 +96,24 @@ Simply copy-paste the backtrace command line above.
 They will not get the chance to complete.
 Kernel PANIC recursion at ../../threads/synch.c:197 in lock_acquire().
 They will not get the chance to complete.
-Page fault at 0xcccccee0: not present err# Preparing to power off...
+Page fault at 0xcccccee0: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc01028ca
+ cr2=cccccee0 error=00000000
+ eax=cccccee0 ebx=cccccee0 ecx=00000780 edx=000003d4
+ esi=cccccee0 edi=c010d14f esp=c0134b4c ebp=c0134af8
+ cs=0008 ds=0010 es=0010 ss=0002
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
 Kernel command line: -q -f put multi-recurse run 'multi-recurse 15'
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
-Calibrating timer...  209,510,400 loops/s.
+Calibrating timer...  417,792,000 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 112 sector (56 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -119,7 +142,7 @@ Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc01076d2
  esi=c0114e20 edi=c011b000 esp=c00b8000 ebp=c0134e34
  cs=0008 ds=0010 es=0010 ss=80a0
 Kernel PANIC at ../../userprog/exception.c:100 in kill(): Kernel bug - unexpected interrupt in kernel
-backtrace  0xc0107279 0xc010a728 0xc010a7d4 0xc01018ca 0xc0101a05 0xc01076d2 0xc010782f 0xc01035c6 0xc01096d7 0xc010aaed 0xc01018ca 0xc0101a05 0x804a50a 0x804810e 0x8048738.
+backtrace  0xc0107279 0xc010a748 0xc010a7f4 0xc01018ca 0xc0101a05 0xc01076d2 0xc010782f 0xc01035c6 0xc0109710 0xc010ab0d 0xc01018ca 0xc0101a05 0x804a50a 0x804810e 0x8048738.
 The `backtrace' program can make call stacks useful.
 Read "Backtraces" in the "Debugging Tools" chapter
 of the Pintos documentation for more information.
@@ -127,5 +150,49 @@ Simply copy-paste the backtrace command line above.
 They will not get the chance to complete.
 Kernel PANIC recursion at ../../threads/synch.c:197 in lock_acquire().
 They will not get the chance to complete.
-Page fault at 0xcccccee0: not presen# Preparing to power off...
-Simulation terminated due to kernel panic.
+Page fault at 0xcccccee0: not present error reading page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc01028ca
+ cr2=cccccee0 error=00000000
+ eax=cccccee0 ebx=cccccee0 ecx=00000780 edx=000003d4
+ esi=cccccee0 edi=c010d14f esp=c0134b4c ebp=c0134af8
+ cs=0008 ds=0010 es=0010 ss=0002
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+They will not get the chance to complete.
+Kernel command line: -q -f put multi-recurse run 'multi-recurse 15'
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+Calibrating timer...  419,020,800 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 112 sector (56 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'multi-recurse' into the file system...
+Executing 'multi-recurse 15':
+(multi-recurse) begin 15
+(multi-recurse) exec("multi-recurse 14")
+(multi-recurse) begin 14
+(multi-recurse) exec("multi-recurse 13")
+(multi-recurse) begin 13
+(multi-recurse) exec("multi-recurse 12")
+(multi-recurse) begin 12
+(multi-recurse) exec("multi-recurse 11")
+(multi-recurse) begin 11
+(multi-recurse) exec("multi-recurse 10")
+(multi-recurse) begin 10
+(multi-recurse) exec("multi-recurse 9")
+(multi-recurse) begin 9
+(multi-recurse) exec("multi-recurse 8")
+Page fault at 0x746c7571: not present error writing page in kernel context.
+Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc01076d2
+ cr2=746c7571 error=00000002
+ eax=c011b04c ebx=c011b02c ecx=746c756d edx=c011b02c
+ esi=c0114e20 edi=c011b000 esp=c00b8000 ebp=c0134e34
+ cs=0008 ds=0010 es=0010 ss=80a0
+Kernel PANIC at ../../userprog/exception.c:100 in kill(): Kernel bug - unSimulation terminated due to kernel panic.

@@ -1,7 +1,7 @@
-Copying tests/userprog/write-normal into /tmp/GaMsDW7Wij.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/GaMsDW7Wij.dsk...
-Writing command line to /tmp/aCu1aXiOLh.dsk...
-qemu-system-i386 -hda /tmp/aCu1aXiOLh.dsk -hdb /tmp/mQiIXHWWOm.dsk -hdc /tmp/GaMsDW7Wij.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/write-normal into /tmp/bT0RDvNZAN.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/bT0RDvNZAN.dsk...
+Writing command line to /tmp/cUA1E9ISsU.dsk...
+qemu-system-i386 -hda /tmp/cUA1E9ISsU.dsk -hdb /tmp/RagVgsC8Ue.dsk -hdc /tmp/bT0RDvNZAN.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put write-normal put sample.txt run write-normal
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
@@ -17,10 +17,12 @@ Putting 'write-normal' into the file system...
 Putting 'sample.txt' into the file system...
 Executing 'write-normal':
 # main#1: process_execute("write-normal") ENTERED
+# Command line is valid
 #  parent is: 0
 # main#1: thread_create("write-normal", ...) RETURNS 3
+# after create_thread 1
 # write-normal#3: start_process("write-normal") ENTERED
-# Loading file
+# Loading file: write-normal
 # Loading done
 # write-normal#3: start_process(...): load returned 1
 # write-normal#3: start_process("write-normal") DONE
@@ -31,17 +33,21 @@ Executing 'write-normal':
 # write-normal#3: process_cleanup() ENTERED
 write-normal: exit(0)
 # write-normal#3: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# after create_thread 4
 # main#1: process_execute("write-normal") RETURNS 2
+# after create_thread 5
 # main#0: process_wait(2) ENTERED
 # main#1: process_wait(2) RETURNS 0
 Execution of 'write-normal' complete.
 # Preparing to power off...
-Timer: 69 ticks
-Thread: 0 idle ticks, 65 kernel ticks, 4 user ticks
+Timer: 65 ticks
+Thread: 0 idle ticks, 63 kernel ticks, 3 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 122 reads, 222 writes
 hd1:0: 103 reads, 0 writes
-Console: 1556 characters output
+Console: 1714 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

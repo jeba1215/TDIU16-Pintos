@@ -13,11 +13,9 @@
 #include "threads/vaddr.h"     /* PHYS_BASE */
 #include "threads/interrupt.h" /* if_ */
 
-/* Headers not yet used that you may need for various reasons. */
+
 #include "threads/synch.h"
 #include "threads/malloc.h"
-#include "lib/kernel/list.h"
-
 #include "userprog/flist.h"
 #include "userprog/plist.h"
 #include "userprog/map.h"
@@ -203,8 +201,11 @@ process_execute (const char *command_line)
 
   /* COPY command line out of parent process memory */
   arguments.command_line = malloc(command_line_size);
-  if (arguments.command_line == NULL)
+  if (arguments.command_line == NULL){
+    debug("Command line was invalid\n");
     return process_id;
+  }
+  debug("Command line is valid\n");
   strlcpy(arguments.command_line, command_line, command_line_size);
 
   strlcpy_first_word (debug_name, command_line, 64);
@@ -219,7 +220,7 @@ process_execute (const char *command_line)
   /* SCHEDULES function `start_process' to run (LATER) */
   thread_id = thread_create (debug_name, PRI_DEFAULT,
       (thread_func*)start_process, &arguments);
-  debug("after create_thread 1\n");
+  debug("after create_thread 1, thread_id: %i\n", thread_id);
 
   if (thread_id != -1)
     sema_down(&s);
@@ -229,10 +230,10 @@ process_execute (const char *command_line)
     process_id = arguments.pid;
   debug("after create_thread 3\n");
 
-  //debug("Command Line: %c\n", (char*)arguments.command_line);
+  debug("Command Line: %s\n", arguments.command_line);
 
   /* WHICH thread may still be using this right now? */
-  /* This causes panic in some tests */
+  /* This causes panic in multi-recurse test */
   free(arguments.command_line);
 
   debug("after create_thread 4\n");
@@ -241,7 +242,6 @@ process_execute (const char *command_line)
       thread_current()->name,
       thread_current()->tid,
       command_line, process_id);
-  debug("after create_thread 5\n");
 
   /* MUST be -1 if `load' in `start_process' return false */
   return process_id;
@@ -269,7 +269,7 @@ start_process (struct parameters_to_start_process* parameters)
   if_.cs = SEL_UCSEG;
   if_.eflags = FLAG_IF | FLAG_MBS;
 
-  debug("Loading file\n");
+  debug("Loading file: %s\n", file_name);
   parameters->success = load (file_name, &if_.eip, &if_.esp);
   debug("Loading done\n");
   
@@ -325,7 +325,7 @@ start_process (struct parameters_to_start_process* parameters)
   sema_up( parameters->sema );
   /* If load fail, quit. Load may fail for several reasons.
      Some simple examples:
-     - File doeas not exist
+     - File does not exist
      - File do not contain a valid program
      - Not enough memory
      */

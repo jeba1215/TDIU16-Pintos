@@ -1,12 +1,12 @@
-Copying tests/userprog/close-bad-fd into /tmp/0ISpWL4RFO.dsk...
-Writing command line to /tmp/CxtGo5ARyR.dsk...
-qemu-system-i386 -hda /tmp/CxtGo5ARyR.dsk -hdb /tmp/LNwc75vHCB.dsk -hdc /tmp/0ISpWL4RFO.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/close-bad-fd into /tmp/uWtFF9svxq.dsk...
+Writing command line to /tmp/kgyokpdtvE.dsk...
+qemu-system-i386 -hda /tmp/kgyokpdtvE.dsk -hdb /tmp/IqxhYELjKN.dsk -hdc /tmp/uWtFF9svxq.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put close-bad-fd run close-bad-fd
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  130,867,200 loops/s.
+Calibrating timer...  412,467,200 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -15,10 +15,12 @@ Boot complete.
 Putting 'close-bad-fd' into the file system...
 Executing 'close-bad-fd':
 # main#1: process_execute("close-bad-fd") ENTERED
+# Command line is valid
 #  parent is: 0
 # main#1: thread_create("close-bad-fd", ...) RETURNS 3
+# after create_thread 1
 # close-bad-fd#3: start_process("close-bad-fd") ENTERED
-# Loading file
+# Loading file: close-bad-fd
 # Loading done
 # close-bad-fd#3: start_process(...): load returned 1
 # close-bad-fd#3: start_process("close-bad-fd") DONE
@@ -27,17 +29,21 @@ Executing 'close-bad-fd':
 # close-bad-fd#3: process_cleanup() ENTERED
 close-bad-fd: exit(0)
 # close-bad-fd#3: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# after create_thread 4
 # main#1: process_execute("close-bad-fd") RETURNS 2
+# after create_thread 5
 # main#0: process_wait(2) ENTERED
 # main#1: process_wait(2) RETURNS 0
 Execution of 'close-bad-fd' complete.
 # Preparing to power off...
-Timer: 64 ticks
-Thread: 0 idle ticks, 62 kernel ticks, 2 user ticks
+Timer: 65 ticks
+Thread: 0 idle ticks, 63 kernel ticks, 2 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes
-Console: 1429 characters output
+Console: 1587 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

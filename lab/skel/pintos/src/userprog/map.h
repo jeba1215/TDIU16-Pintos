@@ -11,7 +11,7 @@ typedef int key_t;
 
 /* symbolisk konstant för att lätt kunna ändra storlekeni 
 fortsättningen används denna då storleken behövs */
-#define MAP_SIZE 500
+#define MAP_SIZE 100
 
 struct map{
   value_t content[MAP_SIZE];

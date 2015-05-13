@@ -32,7 +32,6 @@ key_t plist_add_process(struct map* m, int parent_id, char* name, struct semapho
   key_t k = map_insert(m, p);
   lock_release(&plist_lock);
   return k;
-
 }
 
 struct process* plist_find_process(struct map* m, key_t k)
@@ -78,7 +77,7 @@ void plist_print_process(key_t k, struct process* p, int aux)
   {
     printf("# %-3i %-16s %-11i %-6s %-6i %-13s\n",
         k, p->name, p->exit_status, p->is_alive ? "true":"false", p->parent,
-        p->parent_dead ? "false":"true");
+	   p->parent_dead ? "false":"true");
   }
 }
 

@@ -1,13 +1,13 @@
-Copying tests/userprog/read-normal into /tmp/q7GcF1JFZ4.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/q7GcF1JFZ4.dsk...
-Writing command line to /tmp/461FbypvzU.dsk...
-qemu-system-i386 -hda /tmp/461FbypvzU.dsk -hdb /tmp/5JFDItfhlC.dsk -hdc /tmp/q7GcF1JFZ4.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/read-normal into /tmp/VZ_mzl4HcU.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/VZ_mzl4HcU.dsk...
+Writing command line to /tmp/wzKxQoPxWu.dsk...
+qemu-system-i386 -hda /tmp/wzKxQoPxWu.dsk -hdb /tmp/4CPTI77lbA.dsk -hdc /tmp/VZ_mzl4HcU.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put read-normal put sample.txt run read-normal
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  104,755,200 loops/s.
+Calibrating timer...  129,433,600 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 102 sector (51 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -17,10 +17,12 @@ Putting 'read-normal' into the file system...
 Putting 'sample.txt' into the file system...
 Executing 'read-normal':
 # main#1: process_execute("read-normal") ENTERED
+# Command line is valid
 #  parent is: 0
 # main#1: thread_create("read-normal", ...) RETURNS 3
+# after create_thread 1
 # read-normal#3: start_process("read-normal") ENTERED
-# Loading file
+# Loading file: read-normal
 # Loading done
 # read-normal#3: start_process(...): load returned 1
 # read-normal#3: start_process("read-normal") DONE
@@ -32,17 +34,21 @@ Executing 'read-normal':
 # read-normal#3: process_cleanup() ENTERED
 read-normal: exit(0)
 # read-normal#3: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# after create_thread 4
 # main#1: process_execute("read-normal") RETURNS 2
+# after create_thread 5
 # main#0: process_wait(2) ENTERED
 # main#1: process_wait(2) RETURNS 0
 Execution of 'read-normal' complete.
 # Preparing to power off...
-Timer: 60 ticks
-Thread: 0 idle ticks, 56 kernel ticks, 4 user ticks
+Timer: 77 ticks
+Thread: 0 idle ticks, 73 kernel ticks, 5 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 98 reads, 214 writes
 hd1:0: 102 reads, 0 writes
-Console: 1603 characters output
+Console: 1760 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

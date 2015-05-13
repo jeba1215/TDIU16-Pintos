@@ -1,12 +1,12 @@
-Copying tests/filesys/base/syn-remove into /tmp/4ve_4swXBG.dsk...
-Writing command line to /tmp/BDlf41fQY7.dsk...
-qemu-system-i386 -hda /tmp/BDlf41fQY7.dsk -hdb /tmp/M8_cDpiC4h.dsk -hdc /tmp/4ve_4swXBG.dsk -m 4 -net none -monitor null -nographic
+Copying tests/filesys/base/syn-remove into /tmp/o2O5ED0h51.dsk...
+Writing command line to /tmp/m28zifT5J9.dsk...
+qemu-system-i386 -hda /tmp/m28zifT5J9.dsk -hdb /tmp/OKDOlF3LAF.dsk -hdc /tmp/o2O5ED0h51.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put syn-remove run syn-remove
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  419,020,800 loops/s.
+Calibrating timer...  104,755,200 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 107 sector (53 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -15,10 +15,12 @@ Boot complete.
 Putting 'syn-remove' into the file system...
 Executing 'syn-remove':
 # main#1: process_execute("syn-remove") ENTERED
+# Command line is valid
 #  parent is: 0
 # main#1: thread_create("syn-remove", ...) RETURNS 3
+# after create_thread 1
 # syn-remove#3: start_process("syn-remove") ENTERED
-# Loading file
+# Loading file: syn-remove
 # Loading done
 # syn-remove#3: start_process(...): load returned 1
 # syn-remove#3: start_process("syn-remove") DONE
@@ -26,6 +28,12 @@ Executing 'syn-remove':
 (syn-remove) create "deleteme"
 (syn-remove) open "deleteme"
 (syn-remove) remove "deleteme"
+# after create_thread 2
+# after create_thread 3
+# after create_thread 4
+# main#1: process_execute("syn-remove") RETURNS 2
+# after create_thread 5
+# main#0: process_wait(2) ENTERED
 (syn-remove) write "deleteme"
 (syn-remove) seek "deleteme" to 0
 (syn-remove) read "deleteme"
@@ -34,17 +42,15 @@ Executing 'syn-remove':
 # syn-remove#3: process_cleanup() ENTERED
 syn-remove: exit(0)
 # syn-remove#3: process_cleanup() DONE with status 0
-# main#1: process_execute("syn-remove") RETURNS 2
-# main#0: process_wait(2) ENTERED
 # main#1: process_wait(2) RETURNS 0
 Execution of 'syn-remove' complete.
 # Preparing to power off...
-Timer: 68 ticks
-Thread: 0 idle ticks, 62 kernel ticks, 7 user ticks
+Timer: 92 ticks
+Thread: 0 idle ticks, 83 kernel ticks, 10 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 97 reads, 235 writes
 hd1:0: 107 reads, 0 writes
-Console: 1609 characters output
+Console: 1766 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

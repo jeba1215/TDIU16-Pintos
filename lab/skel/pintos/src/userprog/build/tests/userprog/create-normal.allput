@@ -1,12 +1,12 @@
-Copying tests/userprog/create-normal into /tmp/_Ci0rmcHrP.dsk...
-Writing command line to /tmp/yHGWOMTW4J.dsk...
-qemu-system-i386 -hda /tmp/yHGWOMTW4J.dsk -hdb /tmp/CoiNlEhUad.dsk -hdc /tmp/_Ci0rmcHrP.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/create-normal into /tmp/Tl8SSEOBo8.dsk...
+Writing command line to /tmp/t0zmIJTEy0.dsk...
+qemu-system-i386 -hda /tmp/t0zmIJTEy0.dsk -hdb /tmp/myMpkUxGJI.dsk -hdc /tmp/Tl8SSEOBo8.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put create-normal run create-normal
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  419,020,800 loops/s.
+Calibrating timer...  104,755,200 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -15,10 +15,12 @@ Boot complete.
 Putting 'create-normal' into the file system...
 Executing 'create-normal':
 # main#1: process_execute("create-normal") ENTERED
+# Command line is valid
 #  parent is: 0
 # main#1: thread_create("create-normal", ...) RETURNS 3
+# after create_thread 1
 # create-normal#3: start_process("create-normal") ENTERED
-# Loading file
+# Loading file: create-normal
 # Loading done
 # create-normal#3: start_process(...): load returned 1
 # create-normal#3: start_process("create-normal") DONE
@@ -28,17 +30,21 @@ Executing 'create-normal':
 # create-normal#3: process_cleanup() ENTERED
 create-normal: exit(0)
 # create-normal#3: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# after create_thread 4
 # main#1: process_execute("create-normal") RETURNS 2
+# after create_thread 5
 # main#0: process_wait(2) ENTERED
 # main#1: process_wait(2) RETURNS 0
 Execution of 'create-normal' complete.
 # Preparing to power off...
-Timer: 67 ticks
-Thread: 0 idle ticks, 63 kernel ticks, 4 user ticks
+Timer: 78 ticks
+Thread: 0 idle ticks, 74 kernel ticks, 5 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 81 reads, 210 writes
 hd1:0: 99 reads, 0 writes
-Console: 1479 characters output
+Console: 1638 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

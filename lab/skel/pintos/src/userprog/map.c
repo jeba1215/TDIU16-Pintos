@@ -32,7 +32,7 @@ value_t map_find(struct map* m, key_t k){
     return m->content[k];
   }
   else{
-    debug("#map_find returns null\n");
+    debug("map_find returns null\n");
     return NULL;
   }
 }

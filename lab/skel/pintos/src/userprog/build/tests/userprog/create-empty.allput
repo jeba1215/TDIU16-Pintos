@@ -1,12 +1,12 @@
-Copying tests/userprog/create-empty into /tmp/5RwdWyxPru.dsk...
-Writing command line to /tmp/aAD033uQUI.dsk...
-qemu-system-i386 -hda /tmp/aAD033uQUI.dsk -hdb /tmp/PF2dJfOfQm.dsk -hdc /tmp/5RwdWyxPru.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/create-empty into /tmp/QdiGTg0SeF.dsk...
+Writing command line to /tmp/ZioC9sRBub.dsk...
+qemu-system-i386 -hda /tmp/ZioC9sRBub.dsk -hdb /tmp/jdVwMx6k_Z.dsk -hdc /tmp/QdiGTg0SeF.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put create-empty run create-empty
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  261,734,400 loops/s.
+Calibrating timer...  51,456,000 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -15,10 +15,12 @@ Boot complete.
 Putting 'create-empty' into the file system...
 Executing 'create-empty':
 # main#1: process_execute("create-empty") ENTERED
+# Command line is valid
 #  parent is: 0
 # main#1: thread_create("create-empty", ...) RETURNS 3
+# after create_thread 1
 # create-empty#3: start_process("create-empty") ENTERED
-# Loading file
+# Loading file: create-empty
 # Loading done
 # create-empty#3: start_process(...): load returned 1
 # create-empty#3: start_process("create-empty") DONE
@@ -28,17 +30,21 @@ Executing 'create-empty':
 # create-empty#3: process_cleanup() ENTERED
 create-empty: exit(0)
 # create-empty#3: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# after create_thread 4
 # main#1: process_execute("create-empty") RETURNS 2
+# after create_thread 5
 # main#0: process_wait(2) ENTERED
 # main#1: process_wait(2) RETURNS 0
 Execution of 'create-empty' complete.
 # Preparing to power off...
-Timer: 84 ticks
-Thread: 0 idle ticks, 80 kernel ticks, 4 user ticks
+Timer: 77 ticks
+Thread: 0 idle ticks, 71 kernel ticks, 6 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 63 reads, 210 writes
 hd1:0: 99 reads, 0 writes
-Console: 1458 characters output
+Console: 1615 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
