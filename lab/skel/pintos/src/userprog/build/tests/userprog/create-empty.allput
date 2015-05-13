@@ -1,12 +1,12 @@
-Copying tests/userprog/create-empty into /tmp/A3xbVjW4dU.dsk...
-Writing command line to /tmp/G2Dz8cq54u.dsk...
-qemu-system-i386 -hda /tmp/G2Dz8cq54u.dsk -hdb /tmp/MSyO6mPR1R.dsk -hdc /tmp/A3xbVjW4dU.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/create-empty into /tmp/cXddqdC1VH.dsk...
+Writing command line to /tmp/BsXXbc9rNb.dsk...
+qemu-system-i386 -hda /tmp/BsXXbc9rNb.dsk -hdb /tmp/OikXtR0yCR.dsk -hdc /tmp/cXddqdC1VH.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put create-empty run create-empty
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  103,936,000 loops/s.
+Calibrating timer...  54,067,200 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -25,22 +25,22 @@ Executing 'create-empty':
 # create-empty#3: start_process(...): load returned 1
 # create-empty#3: start_process("create-empty") DONE
 (create-empty) begin
-(create-empty) create(""): 0
-(create-empty) end
-# create-empty#3: process_cleanup() ENTERED
-create-empty: exit(0)
-# create-empty#3: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: create-empty
 # after create_thread 4
 # main#1: process_execute("create-empty") RETURNS 2
 # main#0: process_wait(2) ENTERED
+(create-empty) create(""): 0
+(create-empty) end
+# create-empty#3: process_cleanup() ENTERED
+create-empty: exit(0)
+# create-empty#3: process_cleanup() DONE with status 0
 # main#1: process_wait(2) RETURNS 0
 Execution of 'create-empty' complete.
 # Preparing to power off...
-Timer: 100 ticks
-Thread: 0 idle ticks, 94 kernel ticks, 8 user ticks
+Timer: 166 ticks
+Thread: 68 idle ticks, 91 kernel ticks, 7 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 63 reads, 210 writes
 hd1:0: 99 reads, 0 writes

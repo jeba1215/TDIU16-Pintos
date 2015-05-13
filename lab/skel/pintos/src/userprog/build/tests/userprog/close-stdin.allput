@@ -1,12 +1,12 @@
-Copying tests/userprog/close-stdin into /tmp/njkZipfJG7.dsk...
-Writing command line to /tmp/K9FaVn5Ssh.dsk...
-qemu-system-i386 -hda /tmp/K9FaVn5Ssh.dsk -hdb /tmp/SWmKHqZR0P.dsk -hdc /tmp/njkZipfJG7.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/close-stdin into /tmp/7ZohdPDGlw.dsk...
+Writing command line to /tmp/6beTWm5vXp.dsk...
+qemu-system-i386 -hda /tmp/6beTWm5vXp.dsk -hdb /tmp/C2p4gNl5fd.dsk -hdc /tmp/7ZohdPDGlw.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put close-stdin run close-stdin
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  104,755,200 loops/s.
+Calibrating timer...  30,822,400 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -24,22 +24,22 @@ Executing 'close-stdin':
 # Loading done
 # close-stdin#3: start_process(...): load returned 1
 # close-stdin#3: start_process("close-stdin") DONE
-(close-stdin) begin
-(close-stdin) end
-# close-stdin#3: process_cleanup() ENTERED
-close-stdin: exit(0)
-# close-stdin#3: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: close-stdin
 # after create_thread 4
 # main#1: process_execute("close-stdin") RETURNS 2
 # main#0: process_wait(2) ENTERED
+(close-stdin) begin
+(close-stdin) end
+# close-stdin#3: process_cleanup() ENTERED
+close-stdin: exit(0)
+# close-stdin#3: process_cleanup() DONE with status 0
 # main#1: process_wait(2) RETURNS 0
 Execution of 'close-stdin' complete.
 # Preparing to power off...
-Timer: 103 ticks
-Thread: 0 idle ticks, 97 kernel ticks, 7 user ticks
+Timer: 163 ticks
+Thread: 80 idle ticks, 77 kernel ticks, 6 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes

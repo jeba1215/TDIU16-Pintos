@@ -1,0 +1,71 @@
+Copying tests/userprog/exec-missing into /tmp/p7g72gJAuE.dsk...
+Writing command line to /tmp/Rgb1LNJa3Z.dsk...
+qemu-system-i386 -hda /tmp/Rgb1LNJa3Z.dsk -hdb /tmp/ie35kZWHux.dsk -hdc /tmp/p7g72gJAuE.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put exec-missing run exec-missing
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  97,587,200 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'exec-missing' into the file system...
+Executing 'exec-missing':
+# main#1: process_execute("exec-missing") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("exec-missing", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# exec-missing#3: start_process("exec-missing") ENTERED
+# Loading file: exec-missing
+# Loading done
+# exec-missing#3: start_process(...): load returned 1
+# exec-missing#3: start_process("exec-missing") DONE
+(exec-missing) begin
+# exec-missing#3: process_execute("no-such-file") ENTERED
+# Command line is valid
+#  parent is: 2
+# exec-missing#3: thread_create("no-such-file", ...) RETURNS 4
+# after create_thread 1, thread_id: 4
+# after create_thread 2
+# after create_thread 3
+# Command Line: exec-missing
+# after create_thread 4
+# main#1: process_execute("exec-missing") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# no-such-file#4: start_process("no-such-file") ENTERED
+# Loading file: no-such-file
+load: no-such-file: open failed
+# Loading done
+# no-such-file#4: start_process(...): load returned 0
+# no-such-file#4: start_process("no-such-file") DONE
+# Load failed, exiting thread
+# no-such-file#4: process_cleanup() ENTERED
+# map_find returns null
+# after create_thread 2
+# after create_thread 3
+# Command Line: no-such-file
+# after create_thread 4
+# exec-missing#3: process_execute("no-such-file") RETURNS -1
+(exec-missing) exec("no-such-file"): -1
+(exec-missing) end
+# exec-missing#3: process_cleanup() ENTERED
+exec-missing: exit(0)
+# exec-missing#3: process_cleanup() DONE with status 0
+no-such-file: exit(-1)
+# no-such-file#4: process_cleanup() DONE with status -1
+# main#1: process_wait(2) RETURNS 0
+Execution of 'exec-missing' complete.
+# Preparing to power off...
+Timer: 105 ticks
+Thread: 28 idle ticks, 61 kernel ticks, 16 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 76 reads, 206 writes
+hd1:0: 99 reads, 0 writes
+Console: 2425 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

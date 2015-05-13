@@ -46,13 +46,13 @@ pass tests/userprog/write-bad-fd
 pass tests/userprog/exec-once
 pass tests/userprog/exec-arg
 pass tests/userprog/exec-multiple
-pass tests/userprog/exec-missing
+FAIL tests/userprog/exec-missing
 pass tests/userprog/exec-bad-ptr
 pass tests/userprog/wait-simple
 pass tests/userprog/wait-twice
 pass tests/userprog/wait-killed
 pass tests/userprog/wait-bad-pid
-FAIL tests/userprog/multi-recurse
+pass tests/userprog/multi-recurse
 pass tests/userprog/multi-child-fd
 pass tests/filesys/base/lg-create
 pass tests/filesys/base/lg-full
@@ -66,4 +66,4 @@ pass tests/filesys/base/sm-seq-block
 pass tests/filesys/base/sm-seq-random
 pass tests/filesys/base/syn-read
 pass tests/filesys/base/syn-remove
-FAIL tests/filesys/base/syn-write
+pass tests/filesys/base/syn-write

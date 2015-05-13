@@ -1,12 +1,12 @@
-Copying tests/userprog/write-stdin into /tmp/W6il_KZl8p.dsk...
-Writing command line to /tmp/qK_e7Fod2q.dsk...
-qemu-system-i386 -hda /tmp/qK_e7Fod2q.dsk -hdb /tmp/GI0GIkXNJJ.dsk -hdc /tmp/W6il_KZl8p.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/write-stdin into /tmp/v1ejSkAKCB.dsk...
+Writing command line to /tmp/ixG4kLnxqT.dsk...
+qemu-system-i386 -hda /tmp/ixG4kLnxqT.dsk -hdb /tmp/TZw7TfrDN7.dsk -hdc /tmp/v1ejSkAKCB.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put write-stdin run write-stdin
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  91,340,800 loops/s.
+Calibrating timer...  55,193,600 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -25,26 +25,25 @@ Executing 'write-stdin':
 # write-stdin#3: start_process(...): load returned 1
 # write-stdin#3: start_process("write-stdin") DONE
 (write-stdin) begin
-# map_find returns null
-(write-stdin) end
-# write-stdin#3: process_cleanup() ENTERED
-write-stdin: exit(0)
-# write-stdin#3: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: write-stdin
 # after create_thread 4
 # main#1: process_execute("write-stdin") RETURNS 2
 # main#0: process_wait(2) ENTERED
+# map_find returns null
+(write-stdin) end
+# write-stdin#3: process_cleanup() ENTERED
+write-stdin: exit(0)
 # main#1: process_wait(2) RETURNS 0
 Execution of 'write-stdin' complete.
 # Preparing to power off...
-Timer: 101 ticks
-Thread: 0 idle ticks, 94 kernel ticks, 7 user ticks
+Timer: 154 ticks
+Thread: 68 idle ticks, 80 kernel ticks, 7 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes
-Console: 1610 characters output
+Console: 1557 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

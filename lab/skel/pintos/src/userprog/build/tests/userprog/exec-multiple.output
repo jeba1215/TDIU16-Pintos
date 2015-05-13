@@ -1,12 +1,12 @@
-Copying tests/userprog/exec-multiple into /tmp/ks4D9WBLgm.dsk...
-Copying tests/userprog/child-simple into /tmp/ks4D9WBLgm.dsk...
-Writing command line to /tmp/Z4Ps2eVOJN.dsk...
-qemu-system-i386 -hda /tmp/Z4Ps2eVOJN.dsk -hdb /tmp/9qwALexFMU.dsk -hdc /tmp/ks4D9WBLgm.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/exec-multiple into /tmp/FDrQFiV6PR.dsk...
+Copying tests/userprog/child-simple into /tmp/FDrQFiV6PR.dsk...
+Writing command line to /tmp/ZNjvUX9wAH.dsk...
+qemu-system-i386 -hda /tmp/ZNjvUX9wAH.dsk -hdb /tmp/j6tjPZ0Ce1.dsk -hdc /tmp/FDrQFiV6PR.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put exec-multiple put child-simple run exec-multiple
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
-Calibrating timer...  52,275,200 loops/s.
+Calibrating timer...  56,934,400 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 198 sector (99 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -27,12 +27,12 @@ child-simple: exit(81)
 (exec-multiple) end
 exec-multiple: exit(0)
 Execution of 'exec-multiple' complete.
-Timer: 184 ticks
-Thread: 0 idle ticks, 112 kernel ticks, 72 user ticks
+Timer: 282 ticks
+Thread: 136 idle ticks, 97 kernel ticks, 50 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 230 reads, 406 writes
 hd1:0: 198 reads, 0 writes
-Console: 4899 characters output
+Console: 4844 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,12 +1,12 @@
-Copying tests/userprog/open-bad-ptr into /tmp/STXfzubr3y.dsk...
-Writing command line to /tmp/wDeIOlQfuK.dsk...
-qemu-system-i386 -hda /tmp/wDeIOlQfuK.dsk -hdb /tmp/LV5KR80oZK.dsk -hdc /tmp/STXfzubr3y.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/open-bad-ptr into /tmp/CeVXgyOPX5.dsk...
+Writing command line to /tmp/yBKjSFXvoH.dsk...
+qemu-system-i386 -hda /tmp/yBKjSFXvoH.dsk -hdb /tmp/PjLgEW3gAs.dsk -hdc /tmp/CeVXgyOPX5.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put open-bad-ptr run open-bad-ptr
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  103,936,000 loops/s.
+Calibrating timer...  31,846,400 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -37,12 +37,12 @@ open-bad-ptr: exit(-1)
 # main#1: process_wait(2) RETURNS -1
 Execution of 'open-bad-ptr' complete.
 # Preparing to power off...
-Timer: 101 ticks
-Thread: 0 idle ticks, 91 kernel ticks, 11 user ticks
+Timer: 162 ticks
+Thread: 74 idle ticks, 82 kernel ticks, 7 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes
-Console: 1592 characters output
+Console: 1591 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,13 +1,13 @@
-Copying tests/userprog/read-zero into /tmp/YCaHBZgVaj.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/YCaHBZgVaj.dsk...
-Writing command line to /tmp/mCoN0LckyN.dsk...
-qemu-system-i386 -hda /tmp/mCoN0LckyN.dsk -hdb /tmp/i49xYuXBJi.dsk -hdc /tmp/YCaHBZgVaj.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/read-zero into /tmp/3of9CsUk5t.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/3of9CsUk5t.dsk...
+Writing command line to /tmp/PNDWJUvs3d.dsk...
+qemu-system-i386 -hda /tmp/PNDWJUvs3d.dsk -hdb /tmp/RMXFJF2QV9.dsk -hdc /tmp/3of9CsUk5t.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put read-zero put sample.txt run read-zero
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  39,270,400 loops/s.
+Calibrating timer...  52,428,800 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 102 sector (51 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -28,25 +28,24 @@ Executing 'read-zero':
 # read-zero#3: start_process("read-zero") DONE
 (read-zero) begin
 (read-zero) open "sample.txt"
-(read-zero) end
-# read-zero#3: process_cleanup() ENTERED
-read-zero: exit(0)
-# read-zero#3: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: read-zero
 # after create_thread 4
 # main#1: process_execute("read-zero") RETURNS 2
 # main#0: process_wait(2) ENTERED
+(read-zero) end
+# read-zero#3: process_cleanup() ENTERED
+read-zero: exit(0)
 # main#1: process_wait(2) RETURNS 0
 Execution of 'read-zero' complete.
 # Preparing to power off...
-Timer: 107 ticks
-Thread: 0 idle ticks, 99 kernel ticks, 9 user ticks
+Timer: 179 ticks
+Thread: 84 idle ticks, 88 kernel ticks, 8 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 90 reads, 214 writes
 hd1:0: 102 reads, 0 writes
-Console: 1638 characters output
+Console: 1587 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
