@@ -1,0 +1,50 @@
+Copying tests/userprog/args-multiple into /tmp/9tF5q0bN_7.dsk...
+Writing command line to /tmp/NpIoFBkFhp.dsk...
+qemu-system-i386 -hda /tmp/NpIoFBkFhp.dsk -hdb /tmp/9S_J87QHjm.dsk -hdc /tmp/9tF5q0bN_7.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put args-multiple run 'args-multiple some arguments for you!'
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  419,020,800 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 98 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'args-multiple' into the file system...
+Executing 'args-multiple some arguments for you!':
+# main#1: process_execute("args-multiple some arguments for you!") ENTERED
+#  parent is: 0
+# main#1: thread_create("args-multiple", ...) RETURNS 3
+# args-multiple#3: start_process("args-multiple some arguments for you!") ENTERED
+# Loading file
+# Loading done
+# args-multiple#3: start_process(...): load returned 1
+# args-multiple#3: start_process("args-multiple some arguments for you!") DONE
+(args) begin
+(args) argc = 5
+(args) argv[0] = 'args-multiple'
+(args) argv[1] = 'some'
+(args) argv[2] = 'arguments'
+(args) argv[3] = 'for'
+(args) argv[4] = 'you!'
+(args) argv[5] = null
+(args) end
+# args-multiple#3: process_cleanup() ENTERED
+args-multiple: exit(0)
+# args-multiple#3: process_cleanup() DONE with status 0
+# main#1: process_execute("args-multiple some arguments for you!") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# main#1: process_wait(2) RETURNS 0
+Execution of 'args-multiple some arguments for you!' complete.
+# Preparing to power off...
+Timer: 67 ticks
+Thread: 0 idle ticks, 63 kernel ticks, 4 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 59 reads, 204 writes
+hd1:0: 98 reads, 0 writes
+Console: 1770 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

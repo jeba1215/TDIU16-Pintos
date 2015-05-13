@@ -1,0 +1,61 @@
+Copying tests/userprog/wait-killed into /tmp/60N1GVhtkj.dsk...
+Copying tests/userprog/child-bad into /tmp/60N1GVhtkj.dsk...
+Writing command line to /tmp/ee58zau_Nc.dsk...
+qemu-system-i386 -hda /tmp/ee58zau_Nc.dsk -hdb /tmp/b91M76iZ7z.dsk -hdc /tmp/60N1GVhtkj.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put wait-killed put child-bad run wait-killed
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  127,180,800 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 198 sector (99 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'wait-killed' into the file system...
+Putting 'child-bad' into the file system...
+Executing 'wait-killed':
+# main#1: process_execute("wait-killed") ENTERED
+#  parent is: 0
+# main#1: thread_create("wait-killed", ...) RETURNS 3
+# wait-killed#3: start_process("wait-killed") ENTERED
+# Loading file
+# Loading done
+# wait-killed#3: start_process(...): load returned 1
+# wait-killed#3: start_process("wait-killed") DONE
+(wait-killed) begin
+# wait-killed#3: process_execute("child-bad") ENTERED
+#  parent is: 2
+# wait-killed#3: thread_create("child-bad", ...) RETURNS 4
+# main#1: process_execute("wait-killed") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# child-bad#4: start_process("child-bad") ENTERED
+# Loading file
+# Loading done
+# child-bad#4: start_process(...): load returned 1
+# child-bad#4: start_process("child-bad") DONE
+(child-bad) begin
+# wait-killed#3: process_execute("child-bad") RETURNS 3
+# wait-killed#2: process_wait(3) ENTERED
+# child-bad#4: process_cleanup() ENTERED
+child-bad: exit(-1)
+# child-bad#4: process_cleanup() DONE with status -1
+# wait-killed#3: process_wait(3) RETURNS -1
+(wait-killed) wait(exec()) = -1
+(wait-killed) end
+# wait-killed#3: process_cleanup() ENTERED
+wait-killed: exit(0)
+# wait-killed#3: process_cleanup() DONE with status 0
+# main#1: process_wait(2) RETURNS 0
+Execution of 'wait-killed' complete.
+# Preparing to power off...
+Timer: 124 ticks
+Thread: 0 idle ticks, 93 kernel ticks, 31 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 116 reads, 406 writes
+hd1:0: 198 reads, 0 writes
+Console: 2086 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

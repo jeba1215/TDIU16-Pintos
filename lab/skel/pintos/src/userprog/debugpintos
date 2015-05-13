@@ -1,0 +1,1 @@
+pintos -p ../examples/halt -a halt \ -v -k --fs-disk=2 -- -f -q run halt

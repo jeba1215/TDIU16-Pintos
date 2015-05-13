@@ -1,0 +1,43 @@
+Copying tests/userprog/open-empty into /tmp/LclPJC3dYG.dsk...
+Writing command line to /tmp/QPmRUO3_P0.dsk...
+qemu-system-i386 -hda /tmp/QPmRUO3_P0.dsk -hdb /tmp/Nip5HvfgE5.dsk -hdc /tmp/LclPJC3dYG.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put open-empty run open-empty
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  261,734,400 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'open-empty' into the file system...
+Executing 'open-empty':
+# main#1: process_execute("open-empty") ENTERED
+#  parent is: 0
+# main#1: thread_create("open-empty", ...) RETURNS 3
+# open-empty#3: start_process("open-empty") ENTERED
+# Loading file
+# Loading done
+# open-empty#3: start_process(...): load returned 1
+# open-empty#3: start_process("open-empty") DONE
+(open-empty) begin
+(open-empty) end
+# open-empty#3: process_cleanup() ENTERED
+open-empty: exit(0)
+# open-empty#3: process_cleanup() DONE with status 0
+# main#1: process_execute("open-empty") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# main#1: process_wait(2) RETURNS 0
+Execution of 'open-empty' complete.
+# Preparing to power off...
+Timer: 65 ticks
+Thread: 0 idle ticks, 62 kernel ticks, 3 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 76 reads, 206 writes
+hd1:0: 99 reads, 0 writes
+Console: 1393 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

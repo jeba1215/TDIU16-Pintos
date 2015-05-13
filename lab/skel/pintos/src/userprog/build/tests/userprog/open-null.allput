@@ -1,0 +1,42 @@
+Copying tests/userprog/open-null into /tmp/5OkgCxmICn.dsk...
+Writing command line to /tmp/5yxfmCDOgY.dsk...
+qemu-system-i386 -hda /tmp/5yxfmCDOgY.dsk -hdb /tmp/hMeBp_yBuA.dsk -hdc /tmp/5OkgCxmICn.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put open-null run open-null
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  419,020,800 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'open-null' into the file system...
+Executing 'open-null':
+# main#1: process_execute("open-null") ENTERED
+#  parent is: 0
+# main#1: thread_create("open-null", ...) RETURNS 3
+# open-null#3: start_process("open-null") ENTERED
+# Loading file
+# Loading done
+# open-null#3: start_process(...): load returned 1
+# open-null#3: start_process("open-null") DONE
+(open-null) begin
+# open-null#3: process_cleanup() ENTERED
+open-null: exit(-1)
+# open-null#3: process_cleanup() DONE with status -1
+# main#1: process_execute("open-null") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# main#1: process_wait(2) RETURNS -1
+Execution of 'open-null' complete.
+# Preparing to power off...
+Timer: 65 ticks
+Thread: 0 idle ticks, 63 kernel ticks, 2 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 59 reads, 206 writes
+hd1:0: 99 reads, 0 writes
+Console: 1362 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

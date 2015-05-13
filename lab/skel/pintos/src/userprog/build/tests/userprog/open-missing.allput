@@ -1,0 +1,43 @@
+Copying tests/userprog/open-missing into /tmp/j6kBPqbFjm.dsk...
+Writing command line to /tmp/aWP0zkbcdY.dsk...
+qemu-system-i386 -hda /tmp/aWP0zkbcdY.dsk -hdb /tmp/OKxY7CCiw3.dsk -hdc /tmp/j6kBPqbFjm.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put open-missing run open-missing
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  419,020,800 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'open-missing' into the file system...
+Executing 'open-missing':
+# main#1: process_execute("open-missing") ENTERED
+#  parent is: 0
+# main#1: thread_create("open-missing", ...) RETURNS 3
+# open-missing#3: start_process("open-missing") ENTERED
+# Loading file
+# Loading done
+# open-missing#3: start_process(...): load returned 1
+# open-missing#3: start_process("open-missing") DONE
+(open-missing) begin
+(open-missing) end
+# open-missing#3: process_cleanup() ENTERED
+open-missing: exit(0)
+# open-missing#3: process_cleanup() DONE with status 0
+# main#1: process_execute("open-missing") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# main#1: process_wait(2) RETURNS 0
+Execution of 'open-missing' complete.
+# Preparing to power off...
+Timer: 71 ticks
+Thread: 0 idle ticks, 68 kernel ticks, 3 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 76 reads, 206 writes
+hd1:0: 99 reads, 0 writes
+Console: 1429 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
