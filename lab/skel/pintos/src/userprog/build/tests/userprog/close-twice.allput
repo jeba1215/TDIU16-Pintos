@@ -1,7 +1,7 @@
-Copying tests/userprog/close-twice into /tmp/uKTets0mUu.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/uKTets0mUu.dsk...
-Writing command line to /tmp/slcDDyAuVM.dsk...
-qemu-system-i386 -hda /tmp/slcDDyAuVM.dsk -hdb /tmp/XKymbZPSOO.dsk -hdc /tmp/uKTets0mUu.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/close-twice into /tmp/WiMJTe4wPv.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/WiMJTe4wPv.dsk...
+Writing command line to /tmp/ssmomfAlh3.dsk...
+qemu-system-i386 -hda /tmp/ssmomfAlh3.dsk -hdb /tmp/1lFBj6P8Cx.dsk -hdc /tmp/WiMJTe4wPv.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put close-twice put sample.txt run close-twice
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
@@ -26,6 +26,12 @@ Executing 'close-twice':
 # Loading done
 # close-twice#3: start_process(...): load returned 1
 # close-twice#3: start_process("close-twice") DONE
+# after create_thread 2
+# after create_thread 3
+# Command Line: close-twice
+# after create_thread 4
+# main#1: process_execute("close-twice") RETURNS 2
+# main#0: process_wait(2) ENTERED
 (close-twice) begin
 (close-twice) open "sample.txt"
 (close-twice) close "sample.txt"
@@ -33,17 +39,11 @@ Executing 'close-twice':
 (close-twice) end
 # close-twice#3: process_cleanup() ENTERED
 close-twice: exit(0)
-# after create_thread 2
-# after create_thread 3
-# Command Line: close-twice
-# after create_thread 4
-# main#1: process_execute("close-twice") RETURNS 2
-# main#0: process_wait(2) ENTERED
 # main#1: process_wait(2) RETURNS 0
 Execution of 'close-twice' complete.
 # Preparing to power off...
-Timer: 142 ticks
-Thread: 0 idle ticks, 120 kernel ticks, 24 user ticks
+Timer: 168 ticks
+Thread: 83 idle ticks, 73 kernel ticks, 13 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 90 reads, 214 writes
 hd1:0: 102 reads, 0 writes

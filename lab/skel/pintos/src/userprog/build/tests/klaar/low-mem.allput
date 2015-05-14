@@ -1,13 +1,13 @@
-Copying tests/klaar/low-mem into /tmp/l2ymjDhyBM.dsk...
-Copying tests/klaar/child-simple into /tmp/l2ymjDhyBM.dsk...
-Writing command line to /tmp/8sIqvSifee.dsk...
-qemu-system-i386 -hda /tmp/8sIqvSifee.dsk -hdb /tmp/IJGd5Re8nV.dsk -hdc /tmp/l2ymjDhyBM.dsk -m 4 -net none -monitor null -nographic
+Copying tests/klaar/low-mem into /tmp/fUrmKrV6Tm.dsk...
+Copying tests/klaar/child-simple into /tmp/fUrmKrV6Tm.dsk...
+Writing command line to /tmp/j0rLH2rEVn.dsk...
+qemu-system-i386 -hda /tmp/j0rLH2rEVn.dsk -hdb /tmp/OG7ER1mL6J.dsk -hdc /tmp/fUrmKrV6Tm.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -tcl=3 -f put low-mem put child-simple run low-mem
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  62,156,800 loops/s.
+Calibrating timer...  94,720,000 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 197 sector (98 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -50,12 +50,12 @@ low-mem: exit(0)
 # main#1: process_wait(2) RETURNS 0
 Execution of 'low-mem' complete.
 # Preparing to power off...
-Timer: 131 ticks
-Thread: 0 idle ticks, 108 kernel ticks, 24 user ticks
+Timer: 134 ticks
+Thread: 64 idle ticks, 64 kernel ticks, 6 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 86 reads, 404 writes
 hd1:0: 197 reads, 0 writes
-Console: 1905 characters output
+Console: 1904 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

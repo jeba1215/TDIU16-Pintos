@@ -1,13 +1,13 @@
-Copying tests/klaar/read-bad-buf into /tmp/jNYoMQfTmQ.dsk...
-Copying ../../tests/klaar/sample.txt into /tmp/jNYoMQfTmQ.dsk...
-Writing command line to /tmp/Tltp6QaIrl.dsk...
-qemu-system-i386 -hda /tmp/Tltp6QaIrl.dsk -hdb /tmp/lGPSrJ2brn.dsk -hdc /tmp/jNYoMQfTmQ.dsk -m 4 -net none -monitor null -nographic
+Copying tests/klaar/read-bad-buf into /tmp/ArQqkCdjDg.dsk...
+Copying ../../tests/klaar/sample.txt into /tmp/ArQqkCdjDg.dsk...
+Writing command line to /tmp/NGutDxrhDq.dsk...
+qemu-system-i386 -hda /tmp/NGutDxrhDq.dsk -hdb /tmp/pzJ4CByV0S.dsk -hdc /tmp/ArQqkCdjDg.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put read-bad-buf put sample.txt run read-bad-buf
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  49,920,000 loops/s.
+Calibrating timer...  144,588,800 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 102 sector (51 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -28,23 +28,24 @@ Executing 'read-bad-buf':
 # read-bad-buf#3: start_process("read-bad-buf") DONE
 (read-bad-buf) begin
 (read-bad-buf) open "sample.txt"
-# read-bad-buf#3: process_cleanup() ENTERED
-read-bad-buf: exit(-1)
 # after create_thread 2
 # after create_thread 3
 # Command Line: read-bad-buf
 # after create_thread 4
 # main#1: process_execute("read-bad-buf") RETURNS 2
 # main#0: process_wait(2) ENTERED
+# read-bad-buf#3: process_cleanup() ENTERED
+read-bad-buf: exit(-1)
+# read-bad-buf#3: process_cleanup() DONE with status -1
 # main#1: process_wait(2) RETURNS -1
 Execution of 'read-bad-buf' complete.
 # Preparing to power off...
-Timer: 100 ticks
-Thread: 0 idle ticks, 93 kernel ticks, 9 user ticks
+Timer: 118 ticks
+Thread: 45 idle ticks, 69 kernel ticks, 4 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 90 reads, 214 writes
 hd1:0: 102 reads, 0 writes
-Console: 1629 characters output
+Console: 1687 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

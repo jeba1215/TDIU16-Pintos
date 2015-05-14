@@ -1,12 +1,12 @@
-Copying tests/userprog/close-stdout into /tmp/VWGK8xk0hv.dsk...
-Writing command line to /tmp/0TwuTrcGEg.dsk...
-qemu-system-i386 -hda /tmp/0TwuTrcGEg.dsk -hdb /tmp/1GRgIKsPN6.dsk -hdc /tmp/VWGK8xk0hv.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/close-stdout into /tmp/qWFK8DOFAB.dsk...
+Writing command line to /tmp/86B8auXgmg.dsk...
+qemu-system-i386 -hda /tmp/86B8auXgmg.dsk -hdb /tmp/kgSdjFOmFb.dsk -hdc /tmp/qWFK8DOFAB.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put close-stdout run close-stdout
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  39,065,600 loops/s.
+Calibrating timer...  26,086,400 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -25,25 +25,25 @@ Executing 'close-stdout':
 # close-stdout#3: start_process(...): load returned 1
 # close-stdout#3: start_process("close-stdout") DONE
 (close-stdout) begin
+(close-stdout) end
+# close-stdout#3: process_cleanup() ENTERED
+close-stdout: exit(0)
+# close-stdout#3: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: close-stdout
 # after create_thread 4
 # main#1: process_execute("close-stdout") RETURNS 2
 # main#0: process_wait(2) ENTERED
-(close-stdout) end
-# close-stdout#3: process_cleanup() ENTERED
-close-stdout: exit(0)
-# close-stdout#3: process_cleanup() DONE with status 0
 # main#1: process_wait(2) RETURNS 0
 Execution of 'close-stdout' complete.
 # Preparing to power off...
-Timer: 158 ticks
-Thread: 0 idle ticks, 136 kernel ticks, 22 user ticks
+Timer: 135 ticks
+Thread: 60 idle ticks, 71 kernel ticks, 5 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes
-Console: 1608 characters output
+Console: 1607 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

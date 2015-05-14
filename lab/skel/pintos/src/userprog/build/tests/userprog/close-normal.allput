@@ -1,13 +1,13 @@
-Copying tests/userprog/close-normal into /tmp/qUyhusmIAG.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/qUyhusmIAG.dsk...
-Writing command line to /tmp/f2MeULgOtB.dsk...
-qemu-system-i386 -hda /tmp/f2MeULgOtB.dsk -hdb /tmp/vBvqB9q0Tm.dsk -hdc /tmp/qUyhusmIAG.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/close-normal into /tmp/yAHW9dfI_m.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/yAHW9dfI_m.dsk...
+Writing command line to /tmp/fgUy0TjA3X.dsk...
+qemu-system-i386 -hda /tmp/fgUy0TjA3X.dsk -hdb /tmp/aZZ_p1JO7q.dsk -hdc /tmp/yAHW9dfI_m.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put close-normal put sample.txt run close-normal
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  52,019,200 loops/s.
+Calibrating timer...  52,428,800 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 102 sector (51 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -28,26 +28,26 @@ Executing 'close-normal':
 # close-normal#3: start_process("close-normal") DONE
 (close-normal) begin
 (close-normal) open "sample.txt"
-(close-normal) close "sample.txt"
-(close-normal) end
-# close-normal#3: process_cleanup() ENTERED
-close-normal: exit(0)
-# close-normal#3: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: close-normal
 # after create_thread 4
 # main#1: process_execute("close-normal") RETURNS 2
 # main#0: process_wait(2) ENTERED
+(close-normal) close "sample.txt"
+(close-normal) end
+# close-normal#3: process_cleanup() ENTERED
+close-normal: exit(0)
+# close-normal#3: process_cleanup() DONE with status 0
 # main#1: process_wait(2) RETURNS 0
 Execution of 'close-normal' complete.
 # Preparing to power off...
-Timer: 159 ticks
-Thread: 0 idle ticks, 138 kernel ticks, 22 user ticks
+Timer: 172 ticks
+Thread: 84 idle ticks, 81 kernel ticks, 7 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 90 reads, 214 writes
 hd1:0: 102 reads, 0 writes
-Console: 1737 characters output
+Console: 1736 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

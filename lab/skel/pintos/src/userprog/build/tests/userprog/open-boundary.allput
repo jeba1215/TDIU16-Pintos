@@ -1,13 +1,13 @@
-Copying tests/userprog/open-boundary into /tmp/o93FOAzDWV.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/o93FOAzDWV.dsk...
-Writing command line to /tmp/J4V6nFMLBU.dsk...
-qemu-system-i386 -hda /tmp/J4V6nFMLBU.dsk -hdb /tmp/HqLzg7xFFU.dsk -hdc /tmp/o93FOAzDWV.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/open-boundary into /tmp/nkdXIUpHq_.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/nkdXIUpHq_.dsk...
+Writing command line to /tmp/lnftXpiQxV.dsk...
+qemu-system-i386 -hda /tmp/lnftXpiQxV.dsk -hdb /tmp/xM9WjJEHR8.dsk -hdc /tmp/nkdXIUpHq_.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put open-boundary put sample.txt run open-boundary
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  38,246,400 loops/s.
+Calibrating timer...  9,817,600 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 104 sector (52 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -28,25 +28,25 @@ Executing 'open-boundary':
 # open-boundary#3: start_process("open-boundary") DONE
 (open-boundary) begin
 (open-boundary) open "sample.txt"
-(open-boundary) end
-# open-boundary#3: process_cleanup() ENTERED
-open-boundary: exit(0)
-# open-boundary#3: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: open-boundary
 # after create_thread 4
 # main#1: process_execute("open-boundary") RETURNS 2
 # main#0: process_wait(2) ENTERED
+(open-boundary) end
+# open-boundary#3: process_cleanup() ENTERED
+open-boundary: exit(0)
+# open-boundary#3: process_cleanup() DONE with status 0
 # main#1: process_wait(2) RETURNS 0
 Execution of 'open-boundary' complete.
 # Preparing to power off...
-Timer: 158 ticks
-Thread: 0 idle ticks, 147 kernel ticks, 17 user ticks
+Timer: 110 ticks
+Thread: 44 idle ticks, 62 kernel ticks, 5 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 90 reads, 218 writes
 hd1:0: 104 reads, 0 writes
-Console: 1724 characters output
+Console: 1722 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

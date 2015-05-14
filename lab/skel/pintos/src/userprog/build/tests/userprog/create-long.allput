@@ -1,12 +1,12 @@
-Copying tests/userprog/create-long into /tmp/MroolqJtqx.dsk...
-Writing command line to /tmp/FJfEUdxplF.dsk...
-qemu-system-i386 -hda /tmp/FJfEUdxplF.dsk -hdb /tmp/0nBkduqUUD.dsk -hdc /tmp/MroolqJtqx.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/create-long into /tmp/PNcZs5sMSN.dsk...
+Writing command line to /tmp/rhsY4HCixH.dsk...
+qemu-system-i386 -hda /tmp/rhsY4HCixH.dsk -hdb /tmp/BiO8atiB70.dsk -hdc /tmp/PNcZs5sMSN.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put create-long run create-long
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  61,542,400 loops/s.
+Calibrating timer...  54,374,400 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 100 sector (50 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -25,26 +25,26 @@ Executing 'create-long':
 # create-long#3: start_process(...): load returned 1
 # create-long#3: start_process("create-long") DONE
 (create-long) begin
-(create-long) create("x..."): 0
-(create-long) end
-# create-long#3: process_cleanup() ENTERED
-create-long: exit(0)
 # after create_thread 2
 # after create_thread 3
 # Command Line: create-long
 # after create_thread 4
 # main#1: process_execute("create-long") RETURNS 2
 # main#0: process_wait(2) ENTERED
+(create-long) create("x..."): 0
+(create-long) end
+# create-long#3: process_cleanup() ENTERED
+create-long: exit(0)
+# create-long#3: process_cleanup() DONE with status 0
 # main#1: process_wait(2) RETURNS 0
 Execution of 'create-long' complete.
 # Preparing to power off...
-Timer: 147 ticks
-Thread: 0 idle ticks, 127 kernel ticks, 21 user ticks
+Timer: 136 ticks
+Thread: 55 idle ticks, 75 kernel ticks, 8 user ticks
 hd0:0: 0 reads, 0 writes
-# create-long#3: process_cleanup() DONE with status 0
 hd0:1: 63 reads, 212 writes
 hd1:0: 100 reads, 0 writes
-Console: 1622 characters output
+Console: 1621 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

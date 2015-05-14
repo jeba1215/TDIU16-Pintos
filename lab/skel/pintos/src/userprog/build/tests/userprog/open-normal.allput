@@ -1,13 +1,13 @@
-Copying tests/userprog/open-normal into /tmp/HbYPsDIfE8.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/HbYPsDIfE8.dsk...
-Writing command line to /tmp/4Xlqe3stT5.dsk...
-qemu-system-i386 -hda /tmp/4Xlqe3stT5.dsk -hdb /tmp/tIY9rZF4sb.dsk -hdc /tmp/HbYPsDIfE8.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/open-normal into /tmp/NI18VSCzde.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/NI18VSCzde.dsk...
+Writing command line to /tmp/CQwQ1rg0qk.dsk...
+qemu-system-i386 -hda /tmp/CQwQ1rg0qk.dsk -hdb /tmp/E8KFspJW15.dsk -hdc /tmp/NI18VSCzde.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put open-normal put sample.txt run open-normal
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  26,188,800 loops/s.
+Calibrating timer...  52,377,600 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 101 sector (50 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -27,24 +27,25 @@ Executing 'open-normal':
 # open-normal#3: start_process(...): load returned 1
 # open-normal#3: start_process("open-normal") DONE
 (open-normal) begin
-(open-normal) end
-# open-normal#3: process_cleanup() ENTERED
-open-normal: exit(0)
 # after create_thread 2
 # after create_thread 3
 # Command Line: open-normal
 # after create_thread 4
 # main#1: process_execute("open-normal") RETURNS 2
 # main#0: process_wait(2) ENTERED
+(open-normal) end
+# open-normal#3: process_cleanup() ENTERED
+open-normal: exit(0)
+# open-normal#3: process_cleanup() DONE with status 0
 # main#1: process_wait(2) RETURNS 0
 Execution of 'open-normal' complete.
 # Preparing to power off...
-Timer: 144 ticks
-Thread: 0 idle ticks, 129 kernel ticks, 17 user ticks
+Timer: 104 ticks
+Thread: 40 idle ticks, 60 kernel ticks, 4 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 90 reads, 212 writes
 hd1:0: 101 reads, 0 writes
-Console: 1596 characters output
+Console: 1649 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
