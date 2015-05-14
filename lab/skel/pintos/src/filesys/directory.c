@@ -78,13 +78,11 @@ dir_reopen (struct dir *dir)
 void
 dir_close (struct dir *dir)
 {
-  lock_acquire(&dir_lock);
   if (dir != NULL)
     {
       inode_close (dir->inode);
       free (dir);
     }
-  lock_release(&dir_lock);
 }
 
 /* Returns the inode encapsulated by DIR. */

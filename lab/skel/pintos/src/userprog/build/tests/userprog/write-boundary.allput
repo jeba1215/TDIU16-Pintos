@@ -1,13 +1,13 @@
-Copying tests/userprog/write-boundary into /tmp/Dm21iTO86y.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/Dm21iTO86y.dsk...
-Writing command line to /tmp/U9HQDCFUqT.dsk...
-qemu-system-i386 -hda /tmp/U9HQDCFUqT.dsk -hdb /tmp/rZCgeXg1MV.dsk -hdc /tmp/Dm21iTO86y.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/write-boundary into /tmp/rKcv6VHA5f.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/rKcv6VHA5f.dsk...
+Writing command line to /tmp/m_WxlyR5Ay.dsk...
+qemu-system-i386 -hda /tmp/m_WxlyR5Ay.dsk -hdb /tmp/XeFRCD53li.dsk -hdc /tmp/rKcv6VHA5f.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put write-boundary put sample.txt run write-boundary
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  69,017,600 loops/s.
+Calibrating timer...  27,136,000 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 106 sector (53 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -20,32 +20,33 @@ Executing 'write-boundary':
 # Command line is valid
 #  parent is: 0
 # main#1: thread_create("write-boundary", ...) RETURNS 3
-# after create_thread 1, thread_id: 3
 # write-boundary#3: start_process("write-boundary") ENTERED
 # Loading file: write-boundary
+# after create_thread 1, thread_id: 3
 # Loading done
 # write-boundary#3: start_process(...): load returned 1
 # write-boundary#3: start_process("write-boundary") DONE
 (write-boundary) begin
 (write-boundary) open "sample.txt"
+(write-boundary) end
+# write-boundary#3: process_cleanup() ENTERED
+write-boundary: exit(0)
+# write-boundary#3: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: write-boundary
 # after create_thread 4
 # main#1: process_execute("write-boundary") RETURNS 2
 # main#0: process_wait(2) ENTERED
-(write-boundary) end
-# write-boundary#3: process_cleanup() ENTERED
-write-boundary: exit(0)
 # main#1: process_wait(2) RETURNS 0
 Execution of 'write-boundary' complete.
 # Preparing to power off...
-Timer: 171 ticks
-Thread: 76 idle ticks, 89 kernel ticks, 8 user ticks
+Timer: 151 ticks
+Thread: 0 idle ticks, 130 kernel ticks, 22 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 99 reads, 223 writes
 hd1:0: 106 reads, 0 writes
-Console: 1687 characters output
+Console: 1745 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

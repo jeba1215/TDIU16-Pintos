@@ -1,0 +1,274 @@
+Copying tests/filesys/base/syn-write into /tmp/TAXeeScQMS.dsk...
+Copying tests/filesys/base/child-syn-wrt into /tmp/TAXeeScQMS.dsk...
+Writing command line to /tmp/7vQKXBlT2H.dsk...
+qemu-system-i386 -hda /tmp/7vQKXBlT2H.dsk -hdb /tmp/gN6Pm8E1IW.dsk -hdc /tmp/TAXeeScQMS.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put syn-write put child-syn-wrt run syn-write
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  49,920,000 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 223 sector (111 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'syn-write' into the file system...
+Putting 'child-syn-wrt' into the file system...
+Executing 'syn-write':
+# main#1: process_execute("syn-write") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("syn-write", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# syn-write#3: start_process("syn-write") ENTERED
+# Loading file: syn-write
+# Loading done
+# syn-write#3: start_process(...): load returned 1
+# syn-write#3: start_process("syn-write") DONE
+(syn-write) begin
+(syn-write) create "stuff"
+# after create_thread 2
+# after create_thread 3
+# Command Line: syn-write
+# after create_thread 4
+# main#1: process_execute("syn-write") RETURNS 2
+# main#0: process_wait(2) ENTERED
+(syn-write) exec child 1 of 10: "child-syn-wrt 0"
+# syn-write#3: process_execute("child-syn-wrt 0") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 4
+# after create_thread 1, thread_id: 4
+# child-syn-wrt#4: start_process("child-syn-wrt 0") ENTERED
+# Loading file: child-syn-wrt
+# Loading done
+# child-syn-wrt#4: start_process(...): load returned 1
+# child-syn-wrt#4: start_process("child-syn-wrt") DONE
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 0") RETURNS 3
+(syn-write) exec child 2 of 10: "child-syn-wrt 1"
+# syn-write#3: process_execute("child-syn-wrt 1") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 5
+# after create_thread 1, thread_id: 5
+# child-syn-wrt#5: start_process("child-syn-wrt 1") ENTERED
+# Loading file: child-syn-wrt
+# child-syn-wrt#4: process_cleanup() ENTERED
+child-syn-wrt: exit(0)
+# child-syn-wrt#4: process_cleanup() DONE with status 0
+# Loading done
+# child-syn-wrt#5: start_process(...): load returned 1
+# child-syn-wrt#5: start_process("child-syn-wrt") DONE
+# child-syn-wrt#5: process_cleanup() ENTERED
+child-syn-wrt: exit(1)
+# child-syn-wrt#5: process_cleanup() DONE with status 1
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 1") RETURNS 4
+(syn-write) exec child 3 of 10: "child-syn-wrt 2"
+# syn-write#3: process_execute("child-syn-wrt 2") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 6
+# after create_thread 1, thread_id: 6
+# child-syn-wrt#6: start_process("child-syn-wrt 2") ENTERED
+# Loading file: child-syn-wrt
+# Loading done
+# child-syn-wrt#6: start_process(...): load returned 1
+# child-syn-wrt#6: start_process("child-syn-wrt") DONE
+# child-syn-wrt#6: process_cleanup() ENTERED
+child-syn-wrt: exit(2)
+# child-syn-wrt#6: process_cleanup() DONE with status 2
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 2") RETURNS 5
+(syn-write) exec child 4 of 10: "child-syn-wrt 3"
+# syn-write#3: process_execute("child-syn-wrt 3") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 7
+# after create_thread 1, thread_id: 7
+# child-syn-wrt#7: start_process("child-syn-wrt 3") ENTERED
+# Loading file: child-syn-wrt
+# Loading done
+# child-syn-wrt#7: start_process(...): load returned 1
+# child-syn-wrt#7: start_process("child-syn-wrt") DONE
+# child-syn-wrt#7: process_cleanup() ENTERED
+child-syn-wrt: exit(3)
+# child-syn-wrt#7: process_cleanup() DONE with status 3
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 3") RETURNS 6
+(syn-write) exec child 5 of 10: "child-syn-wrt 4"
+# syn-write#3: process_execute("child-syn-wrt 4") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 8
+# after create_thread 1, thread_id: 8
+# child-syn-wrt#8: start_process("child-syn-wrt 4") ENTERED
+# Loading file: child-syn-wrt
+# Loading done
+# child-syn-wrt#8: start_process(...): load returned 1
+# child-syn-wrt#8: start_process("child-syn-wrt") DONE
+# child-syn-wrt#8: process_cleanup() ENTERED
+child-syn-wrt: exit(4)
+# child-syn-wrt#8: process_cleanup() DONE with status 4
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 4") RETURNS 7
+(syn-write) exec child 6 of 10: "child-syn-wrt 5"
+# syn-write#3: process_execute("child-syn-wrt 5") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 9
+# after create_thread 1, thread_id: 9
+# child-syn-wrt#9: start_process("child-syn-wrt 5") ENTERED
+# Loading file: child-syn-wrt
+# Loading done
+# child-syn-wrt#9: start_process(...): load returned 1
+# child-syn-wrt#9: start_process("child-syn-wrt") DONE
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 5") RETURNS 8
+(syn-write) exec child 7 of 10: "child-syn-wrt 6"
+# syn-write#3: process_execute("child-syn-wrt 6") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 10
+# after create_thread 1, thread_id: 10
+# child-syn-wrt#9: process_cleanup() ENTERED
+child-syn-wrt: exit(5)
+# child-syn-wrt#10: start_process("child-syn-wrt 6") ENTERED
+# Loading file: child-syn-wrt
+# child-syn-wrt#9: process_cleanup() DONE with status 5
+# Loading done
+# child-syn-wrt#10: start_process(...): load returned 1
+# child-syn-wrt#10: start_process("child-syn-wrt") DONE
+# child-syn-wrt#10: process_cleanup() ENTERED
+child-syn-wrt: exit(6)
+# child-syn-wrt#10: process_cleanup() DONE with status 6
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 6") RETURNS 9
+(syn-write) exec child 8 of 10: "child-syn-wrt 7"
+# syn-write#3: process_execute("child-syn-wrt 7") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 11
+# after create_thread 1, thread_id: 11
+# child-syn-wrt#11: start_process("child-syn-wrt 7") ENTERED
+# Loading file: child-syn-wrt
+# Loading done
+# child-syn-wrt#11: start_process(...): load returned 1
+# child-syn-wrt#11: start_process("child-syn-wrt") DONE
+# child-syn-wrt#11: process_cleanup() ENTERED
+child-syn-wrt: exit(7)
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 7") RETURNS 10
+(syn-write) exec child 9 of 10: "child-syn-wrt 8"
+# syn-write#3: process_execute("child-syn-wrt 8") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 12
+# after create_thread 1, thread_id: 12
+# child-syn-wrt#11: process_cleanup() DONE with status 7
+# child-syn-wrt#12: start_process("child-syn-wrt 8") ENTERED
+# Loading file: child-syn-wrt
+# Loading done
+# child-syn-wrt#12: start_process(...): load returned 1
+# child-syn-wrt#12: start_process("child-syn-wrt") DONE
+# child-syn-wrt#12: process_cleanup() ENTERED
+child-syn-wrt: exit(8)
+# child-syn-wrt#12: process_cleanup() DONE with status 8
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 8") RETURNS 11
+(syn-write) exec child 10 of 10: "child-syn-wrt 9"
+# syn-write#3: process_execute("child-syn-wrt 9") ENTERED
+# Command line is valid
+#  parent is: 2
+# syn-write#3: thread_create("child-syn-wrt", ...) RETURNS 13
+# after create_thread 1, thread_id: 13
+# child-syn-wrt#13: start_process("child-syn-wrt 9") ENTERED
+# Loading file: child-syn-wrt
+# Loading done
+# child-syn-wrt#13: start_process(...): load returned 1
+# child-syn-wrt#13: start_process("child-syn-wrt") DONE
+# child-syn-wrt#13: process_cleanup() ENTERED
+child-syn-wrt: exit(9)
+# child-syn-wrt#13: process_cleanup() DONE with status 9
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-syn-wrt
+# after create_thread 4
+# syn-write#3: process_execute("child-syn-wrt 9") RETURNS 12
+# syn-write#2: process_wait(3) ENTERED
+# syn-write#3: process_wait(3) RETURNS 0
+(syn-write) wait for child 1 of 10 returned 0 (expected 0)
+# syn-write#2: process_wait(4) ENTERED
+# syn-write#3: process_wait(4) RETURNS 1
+(syn-write) wait for child 2 of 10 returned 1 (expected 1)
+# syn-write#2: process_wait(5) ENTERED
+# syn-write#3: process_wait(5) RETURNS 2
+(syn-write) wait for child 3 of 10 returned 2 (expected 2)
+# syn-write#2: process_wait(6) ENTERED
+# syn-write#3: process_wait(6) RETURNS 3
+(syn-write) wait for child 4 of 10 returned 3 (expected 3)
+# syn-write#2: process_wait(7) ENTERED
+# syn-write#3: process_wait(7) RETURNS 4
+(syn-write) wait for child 5 of 10 returned 4 (expected 4)
+# syn-write#2: process_wait(8) ENTERED
+# syn-write#3: process_wait(8) RETURNS 5
+(syn-write) wait for child 6 of 10 returned 5 (expected 5)
+# syn-write#2: process_wait(9) ENTERED
+# syn-write#3: process_wait(9) RETURNS 6
+(syn-write) wait for child 7 of 10 returned 6 (expected 6)
+# syn-write#2: process_wait(10) ENTERED
+# syn-write#3: process_wait(10) RETURNS 7
+(syn-write) wait for child 8 of 10 returned 7 (expected 7)
+# syn-write#2: process_wait(11) ENTERED
+# syn-write#3: process_wait(11) RETURNS 8
+(syn-write) wait for child 9 of 10 returned 8 (expected 8)
+# syn-write#2: process_wait(12) ENTERED
+# syn-write#3: process_wait(12) RETURNS 9
+(syn-write) wait for child 10 of 10 returned 9 (expected 9)
+(syn-write) open "stuff"
+(syn-write) read "stuff"
+(syn-write) end
+# syn-write#3: process_cleanup() ENTERED
+syn-write: exit(0)
+# syn-write#3: process_cleanup() DONE with status 0
+# main#1: process_wait(2) RETURNS 0
+Execution of 'syn-write' complete.
+# Preparing to power off...
+Timer: 639 ticks
+Thread: 0 idle ticks, 254 kernel ticks, 387 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 505 reads, 480 writes
+hd1:0: 223 reads, 0 writes
+Console: 10605 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

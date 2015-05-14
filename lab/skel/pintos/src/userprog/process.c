@@ -52,7 +52,6 @@ void* setup_main_stack(const char* command_line, void* stack_top)
   STACK_DEBUG("# line_size (aligned) = %d\n", line_size);
 
   /* calculate how many words the command_line contain */
-  //argc = count_args(command_line, " ");
   argc = 0;
   char* new_command_line = malloc(line_size);
   if(new_command_line == NULL)
@@ -65,9 +64,8 @@ void* setup_main_stack(const char* command_line, void* stack_top)
     {
       argc++;
     }
-  
+  free(new_command_line);
   STACK_DEBUG("# argc = %d\n", argc);
-
 
   /* calculate the size needed on our simulated stack */
   total_size = (4 + argc)*4 + line_size;
@@ -81,7 +79,6 @@ void* setup_main_stack(const char* command_line, void* stack_top)
   esp->argc = argc;
 
   /* calculate where in the memory the argv array starts */
-  esp->argv = (char**) (esp + 1);
   esp->argv = (char**)((int)esp + 12);
 
   /* calculate where in the memory the words is stored */
@@ -91,7 +88,6 @@ void* setup_main_stack(const char* command_line, void* stack_top)
   strlcpy(cmd_line_on_stack, command_line, line_size);
 
   /* build argv array and insert null-characters after each word */
-  //char* token;
   char* cmd_copy = (char*)command_line;
   int i = 0;
 

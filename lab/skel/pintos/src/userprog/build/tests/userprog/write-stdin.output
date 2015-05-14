@@ -1,11 +1,11 @@
-Copying tests/userprog/write-stdin into /tmp/v1ejSkAKCB.dsk...
-Writing command line to /tmp/ixG4kLnxqT.dsk...
-qemu-system-i386 -hda /tmp/ixG4kLnxqT.dsk -hdb /tmp/TZw7TfrDN7.dsk -hdc /tmp/v1ejSkAKCB.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/write-stdin into /tmp/M8Lgj72egC.dsk...
+Writing command line to /tmp/Nlva6emHon.dsk...
+qemu-system-i386 -hda /tmp/Nlva6emHon.dsk -hdb /tmp/EZEvqRofEN.dsk -hdc /tmp/M8Lgj72egC.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put write-stdin run write-stdin
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
-Calibrating timer...  55,193,600 loops/s.
+Calibrating timer...  13,094,400 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -17,12 +17,12 @@ Executing 'write-stdin':
 (write-stdin) end
 write-stdin: exit(0)
 Execution of 'write-stdin' complete.
-Timer: 154 ticks
-Thread: 68 idle ticks, 80 kernel ticks, 7 user ticks
+Timer: 139 ticks
+Thread: 0 idle ticks, 125 kernel ticks, 15 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes
-Console: 1557 characters output
+Console: 1558 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

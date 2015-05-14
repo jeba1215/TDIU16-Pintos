@@ -1,12 +1,12 @@
-Copying tests/userprog/multi-recurse into /tmp/QTpr3IRA8O.dsk...
-Writing command line to /tmp/Otast64Ms2.dsk...
-qemu-system-i386 -hda /tmp/Otast64Ms2.dsk -hdb /tmp/KcNybpYnkV.dsk -hdc /tmp/QTpr3IRA8O.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/multi-recurse into /tmp/0N4pYGYhBD.dsk...
+Writing command line to /tmp/8WzKZRxTe6.dsk...
+qemu-system-i386 -hda /tmp/8WzKZRxTe6.dsk -hdb /tmp/8Kn08lUcBV.dsk -hdc /tmp/0N4pYGYhBD.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put multi-recurse run 'multi-recurse 15'
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  59,187,200 loops/s.
+Calibrating timer...  25,728,000 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 112 sector (56 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -96,6 +96,12 @@ Executing 'multi-recurse 15':
 # Loading done
 # multi-recurse#7: start_process(...): load returned 1
 # multi-recurse#7: start_process("multi-recurse") DONE
+# after create_thread 2
+# after create_thread 3
+# Command Line: multi-recurse
+# after create_thread 4
+# multi-recurse#6: process_execute("multi-recurse 11") RETURNS 6
+# multi-recurse#5: process_wait(6) ENTERED
 (multi-recurse) begin 11
 (multi-recurse) exec("multi-recurse 10")
 # multi-recurse#7: process_execute("multi-recurse 10") ENTERED
@@ -103,12 +109,6 @@ Executing 'multi-recurse 15':
 #  parent is: 6
 # multi-recurse#7: thread_create("multi-recurse", ...) RETURNS 8
 # after create_thread 1, thread_id: 8
-# after create_thread 2
-# after create_thread 3
-# Command Line: multi-recurse
-# after create_thread 4
-# multi-recurse#6: process_execute("multi-recurse 11") RETURNS 6
-# multi-recurse#5: process_wait(6) ENTERED
 # multi-recurse#8: start_process("multi-recurse 10") ENTERED
 # Loading file: multi-recurse
 # Loading done
@@ -150,6 +150,12 @@ Executing 'multi-recurse 15':
 # Loading done
 # multi-recurse#10: start_process(...): load returned 1
 # multi-recurse#10: start_process("multi-recurse") DONE
+# after create_thread 2
+# after create_thread 3
+# Command Line: multi-recurse
+# after create_thread 4
+# multi-recurse#9: process_execute("multi-recurse 8") RETURNS 9
+# multi-recurse#8: process_wait(9) ENTERED
 (multi-recurse) begin 8
 (multi-recurse) exec("multi-recurse 7")
 # multi-recurse#10: process_execute("multi-recurse 7") ENTERED
@@ -157,12 +163,6 @@ Executing 'multi-recurse 15':
 #  parent is: 9
 # multi-recurse#10: thread_create("multi-recurse", ...) RETURNS 11
 # after create_thread 1, thread_id: 11
-# after create_thread 2
-# after create_thread 3
-# Command Line: multi-recurse
-# after create_thread 4
-# multi-recurse#9: process_execute("multi-recurse 8") RETURNS 9
-# multi-recurse#8: process_wait(9) ENTERED
 # multi-recurse#11: start_process("multi-recurse 7") ENTERED
 # Loading file: multi-recurse
 # Loading done
@@ -240,6 +240,12 @@ Executing 'multi-recurse 15':
 # Loading done
 # multi-recurse#15: start_process(...): load returned 1
 # multi-recurse#15: start_process("multi-recurse") DONE
+# after create_thread 2
+# after create_thread 3
+# Command Line: multi-recurse
+# after create_thread 4
+# multi-recurse#14: process_execute("multi-recurse 3") RETURNS 14
+# multi-recurse#13: process_wait(14) ENTERED
 (multi-recurse) begin 3
 (multi-recurse) exec("multi-recurse 2")
 # multi-recurse#15: process_execute("multi-recurse 2") ENTERED
@@ -247,12 +253,6 @@ Executing 'multi-recurse 15':
 #  parent is: 14
 # multi-recurse#15: thread_create("multi-recurse", ...) RETURNS 16
 # after create_thread 1, thread_id: 16
-# after create_thread 2
-# after create_thread 3
-# Command Line: multi-recurse
-# after create_thread 4
-# multi-recurse#14: process_execute("multi-recurse 3") RETURNS 14
-# multi-recurse#13: process_wait(14) ENTERED
 # multi-recurse#16: start_process("multi-recurse 2") ENTERED
 # Loading file: multi-recurse
 # Loading done
@@ -298,7 +298,6 @@ Executing 'multi-recurse 15':
 (multi-recurse) end 0
 # multi-recurse#18: process_cleanup() ENTERED
 multi-recurse: exit(0)
-# multi-recurse#18: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: multi-recurse
@@ -310,6 +309,7 @@ multi-recurse: exit(0)
 # multi-recurse#17: process_cleanup() ENTERED
 multi-recurse: exit(1)
 # multi-recurse#17: process_cleanup() DONE with status 1
+# multi-recurse#18: process_cleanup() DONE with status 0
 # multi-recurse#16: process_wait(16) RETURNS 1
 (multi-recurse) end 2
 # multi-recurse#16: process_cleanup() ENTERED
@@ -324,12 +324,12 @@ multi-recurse: exit(3)
 (multi-recurse) end 4
 # multi-recurse#14: process_cleanup() ENTERED
 multi-recurse: exit(4)
-# multi-recurse#14: process_cleanup() DONE with status 4
 # multi-recurse#13: process_wait(13) RETURNS 4
 (multi-recurse) end 5
 # multi-recurse#13: process_cleanup() ENTERED
 multi-recurse: exit(5)
 # multi-recurse#13: process_cleanup() DONE with status 5
+# multi-recurse#14: process_cleanup() DONE with status 4
 # multi-recurse#12: process_wait(12) RETURNS 5
 (multi-recurse) end 6
 # multi-recurse#12: process_cleanup() ENTERED
@@ -383,12 +383,12 @@ multi-recurse: exit(15)
 # main#1: process_wait(2) RETURNS 15
 Execution of 'multi-recurse 15' complete.
 # Preparing to power off...
-Timer: 315 ticks
-Thread: 100 idle ticks, 89 kernel ticks, 126 user ticks
+Timer: 872 ticks
+Thread: 0 idle ticks, 249 kernel ticks, 623 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 654 reads, 232 writes
 hd1:0: 112 reads, 0 writes
-Console: 15100 characters output
+Console: 15099 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

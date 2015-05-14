@@ -1,12 +1,12 @@
-Copying tests/klaar/exec-corrupt into /tmp/Nqs_aScVV6.dsk...
-Copying ../../tests/klaar/corrupt-elf into /tmp/Nqs_aScVV6.dsk...
-Writing command line to /tmp/vLB7VcAEEw.dsk...
-qemu-system-i386 -hda /tmp/vLB7VcAEEw.dsk -hdb /tmp/Vvp9vZs4gn.dsk -hdc /tmp/Nqs_aScVV6.dsk -m 4 -net none -monitor null -nographic
+Copying tests/klaar/exec-corrupt into /tmp/8ntCBdZtj8.dsk...
+Copying ../../tests/klaar/corrupt-elf into /tmp/8ntCBdZtj8.dsk...
+Writing command line to /tmp/pqcer62_lQ.dsk...
+qemu-system-i386 -hda /tmp/pqcer62_lQ.dsk -hdb /tmp/in9bty4Fu6.dsk -hdc /tmp/8ntCBdZtj8.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put exec-corrupt put corrupt-elf run exec-corrupt
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
-Calibrating timer...  78,540,800 loops/s.
+Calibrating timer...  50,739,200 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 129 sector (64 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -22,12 +22,12 @@ corrupt-elf: exit(-1)
 (exec-corrupt) end
 exec-corrupt: exit(0)
 Execution of 'exec-corrupt' complete.
-Timer: 120 ticks
-Thread: 55 idle ticks, 59 kernel ticks, 7 user ticks
+Timer: 146 ticks
+Thread: 0 idle ticks, 108 kernel ticks, 39 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 91 reads, 268 writes
 hd1:0: 129 reads, 0 writes
-Console: 2431 characters output
+Console: 2487 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

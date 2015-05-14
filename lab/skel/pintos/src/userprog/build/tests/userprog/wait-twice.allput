@@ -1,13 +1,13 @@
-Copying tests/userprog/wait-twice into /tmp/Xs7uVW7OY2.dsk...
-Copying tests/userprog/child-simple into /tmp/Xs7uVW7OY2.dsk...
-Writing command line to /tmp/2vbWSUIU13.dsk...
-qemu-system-i386 -hda /tmp/2vbWSUIU13.dsk -hdb /tmp/67KsUvivmn.dsk -hdc /tmp/Xs7uVW7OY2.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/wait-twice into /tmp/aZKZv8f6px.dsk...
+Copying tests/userprog/child-simple into /tmp/aZKZv8f6px.dsk...
+Writing command line to /tmp/C2LtYH1n81.dsk...
+qemu-system-i386 -hda /tmp/C2LtYH1n81.dsk -hdb /tmp/Y9eeCenutF.dsk -hdc /tmp/aZKZv8f6px.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put wait-twice put child-simple run wait-twice
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  49,100,800 loops/s.
+Calibrating timer...  28,620,800 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 198 sector (99 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -36,16 +36,17 @@ Executing 'wait-twice':
 # after create_thread 3
 # Command Line: wait-twice
 # after create_thread 4
-# main#1: process_execute("wait-twice") RETURNS 2
-# main#0: process_wait(2) ENTERED
 # child-simple#4: start_process("child-simple") ENTERED
 # Loading file: child-simple
+# main#1: process_execute("wait-twice") RETURNS 2
+# main#0: process_wait(2) ENTERED
 # Loading done
 # child-simple#4: start_process(...): load returned 1
 # child-simple#4: start_process("child-simple") DONE
 (child-simple) run
 # child-simple#4: process_cleanup() ENTERED
 child-simple: exit(81)
+# child-simple#4: process_cleanup() DONE with status 81
 # after create_thread 2
 # after create_thread 3
 # Command Line: child-simple
@@ -62,12 +63,11 @@ child-simple: exit(81)
 # wait-twice#3: process_cleanup() ENTERED
 wait-twice: exit(0)
 # wait-twice#3: process_cleanup() DONE with status 0
-# child-simple#4: process_cleanup() DONE with status 81
 # main#1: process_wait(2) RETURNS 0
 Execution of 'wait-twice' complete.
 # Preparing to power off...
-Timer: 195 ticks
-Thread: 96 idle ticks, 81 kernel ticks, 18 user ticks
+Timer: 278 ticks
+Thread: 0 idle ticks, 217 kernel ticks, 62 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 122 reads, 406 writes
 hd1:0: 198 reads, 0 writes

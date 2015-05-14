@@ -1,12 +1,12 @@
-Copying tests/userprog/args-dbl-space into /tmp/BqbbiMJZOg.dsk...
-Writing command line to /tmp/6VaJB2Es0b.dsk...
-qemu-system-i386 -hda /tmp/6VaJB2Es0b.dsk -hdb /tmp/0bwBXn65qz.dsk -hdc /tmp/BqbbiMJZOg.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/args-dbl-space into /tmp/n1lqcv5IiN.dsk...
+Writing command line to /tmp/9c4WT0fxNL.dsk...
+qemu-system-i386 -hda /tmp/9c4WT0fxNL.dsk -hdb /tmp/5HyDnoq0xT.dsk -hdc /tmp/n1lqcv5IiN.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put args-dbl-space run 'args-dbl-space two  spaces!'
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  101,478,400 loops/s.
+Calibrating timer...  107,315,200 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 98 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -24,6 +24,12 @@ Executing 'args-dbl-space two  spaces!':
 # Loading done
 # args-dbl-space#3: start_process(...): load returned 1
 # args-dbl-space#3: start_process("args-dbl-space") DONE
+# after create_thread 2
+# after create_thread 3
+# Command Line: args-dbl-space
+# after create_thread 4
+# main#1: process_execute("args-dbl-space two  spaces!") RETURNS 2
+# main#0: process_wait(2) ENTERED
 (args) begin
 (args) argc = 3
 (args) argv[0] = 'args-dbl-space'
@@ -33,22 +39,15 @@ Executing 'args-dbl-space two  spaces!':
 (args) end
 # args-dbl-space#3: process_cleanup() ENTERED
 args-dbl-space: exit(0)
-# args-dbl-space#3: process_cleanup() DONE with status 0
-# after create_thread 2
-# after create_thread 3
-# Command Line: args-dbl-space
-# after create_thread 4
-# main#1: process_execute("args-dbl-space two  spaces!") RETURNS 2
-# main#0: process_wait(2) ENTERED
 # main#1: process_wait(2) RETURNS 0
 Execution of 'args-dbl-space two  spaces!' complete.
 # Preparing to power off...
-Timer: 108 ticks
-Thread: 39 idle ticks, 64 kernel ticks, 5 user ticks
+Timer: 136 ticks
+Thread: 0 idle ticks, 112 kernel ticks, 25 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 204 writes
 hd1:0: 98 reads, 0 writes
-Console: 1830 characters output
+Console: 1774 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

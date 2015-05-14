@@ -1,14 +1,14 @@
-Copying tests/userprog/multi-child-fd into /tmp/HnEmBcXQR9.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/HnEmBcXQR9.dsk...
-Copying tests/userprog/child-close into /tmp/HnEmBcXQR9.dsk...
-Writing command line to /tmp/4nppVTGvIL.dsk...
-qemu-system-i386 -hda /tmp/4nppVTGvIL.dsk -hdb /tmp/Q6o_4xtQux.dsk -hdc /tmp/HnEmBcXQR9.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/multi-child-fd into /tmp/qqd7JpLS42.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/qqd7JpLS42.dsk...
+Copying tests/userprog/child-close into /tmp/qqd7JpLS42.dsk...
+Writing command line to /tmp/l0N4Sx6t6A.dsk...
+qemu-system-i386 -hda /tmp/l0N4Sx6t6A.dsk -hdb /tmp/fbNQslFqNK.dsk -hdc /tmp/qqd7JpLS42.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put multi-child-fd put sample.txt put child-close run multi-child-fd
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  39,270,400 loops/s.
+Calibrating timer...  22,912,000 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 215 sector (107 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -30,17 +30,17 @@ Executing 'multi-child-fd':
 # multi-child-fd#3: start_process("multi-child-fd") DONE
 (multi-child-fd) begin
 (multi-child-fd) open "sample.txt"
+# multi-child-fd#3: process_execute("child-close 2") ENTERED
+# Command line is valid
+#  parent is: 2
+# multi-child-fd#3: thread_create("child-close", ...) RETURNS 4
+# after create_thread 1, thread_id: 4
 # after create_thread 2
 # after create_thread 3
 # Command Line: multi-child-fd
 # after create_thread 4
 # main#1: process_execute("multi-child-fd") RETURNS 2
 # main#0: process_wait(2) ENTERED
-# multi-child-fd#3: process_execute("child-close 2") ENTERED
-# Command line is valid
-#  parent is: 2
-# multi-child-fd#3: thread_create("child-close", ...) RETURNS 4
-# after create_thread 1, thread_id: 4
 # child-close#4: start_process("child-close 2") ENTERED
 # Loading file: child-close
 # Loading done
@@ -50,7 +50,6 @@ Executing 'multi-child-fd':
 (child-close) end
 # child-close#4: process_cleanup() ENTERED
 child-close: exit(0)
-# child-close#4: process_cleanup() DONE with status 0
 # after create_thread 2
 # after create_thread 3
 # Command Line: child-close
@@ -64,15 +63,16 @@ child-close: exit(0)
 # multi-child-fd#3: process_cleanup() ENTERED
 multi-child-fd: exit(0)
 # multi-child-fd#3: process_cleanup() DONE with status 0
+# child-close#4: process_cleanup() DONE with status 0
 # main#1: process_wait(2) RETURNS 0
 Execution of 'multi-child-fd' complete.
 # Preparing to power off...
-Timer: 149 ticks
-Thread: 74 idle ticks, 67 kernel ticks, 9 user ticks
+Timer: 216 ticks
+Thread: 0 idle ticks, 165 kernel ticks, 52 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 168 reads, 442 writes
 hd1:0: 215 reads, 0 writes
-Console: 2708 characters output
+Console: 2709 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

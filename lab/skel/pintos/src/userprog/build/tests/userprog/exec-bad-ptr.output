@@ -1,11 +1,11 @@
-Copying tests/userprog/exec-bad-ptr into /tmp/VT3ZsD8waB.dsk...
-Writing command line to /tmp/Gph0UgCVy3.dsk...
-qemu-system-i386 -hda /tmp/Gph0UgCVy3.dsk -hdb /tmp/87VVRhLo2H.dsk -hdc /tmp/VT3ZsD8waB.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/exec-bad-ptr into /tmp/e8dSUk9jXD.dsk...
+Writing command line to /tmp/SIxX7X0xhI.dsk...
+qemu-system-i386 -hda /tmp/SIxX7X0xhI.dsk -hdb /tmp/NxzyVXswqg.dsk -hdc /tmp/e8dSUk9jXD.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put exec-bad-ptr run exec-bad-ptr
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
-Calibrating timer...  45,004,800 loops/s.
+Calibrating timer...  22,912,000 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -16,12 +16,12 @@ Executing 'exec-bad-ptr':
 (exec-bad-ptr) begin
 exec-bad-ptr: exit(-1)
 Execution of 'exec-bad-ptr' complete.
-Timer: 130 ticks
-Thread: 57 idle ticks, 65 kernel ticks, 8 user ticks
+Timer: 172 ticks
+Thread: 0 idle ticks, 156 kernel ticks, 17 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes
-Console: 1591 characters output
+Console: 1592 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
