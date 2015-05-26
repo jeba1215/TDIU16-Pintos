@@ -2,16 +2,16 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "userprog/gdt.h"      /* SEL_* constants */
+#include "userprog/gdt.h"
 #include "userprog/process.h"
 #include "userprog/load.h"
-#include "userprog/pagedir.h"  /* pagedir_activate etc. */
-#include "userprog/tss.h"      /* tss_update */
+#include "userprog/pagedir.h"
+#include "userprog/tss.h"
 #include "filesys/file.h"
-#include "threads/flags.h"     /* FLAG_* constants */
+#include "threads/flags.h"
 #include "threads/thread.h"
-#include "threads/vaddr.h"     /* PHYS_BASE */
-#include "threads/interrupt.h" /* if_ */
+#include "threads/vaddr.h"
+#include "threads/interrupt.h"
 
 
 #include "threads/synch.h"
@@ -20,49 +20,27 @@
 #include "userprog/plist.h"
 #include "userprog/map.h"
 
-/* HACK defines code you must remove and implement in a proper way */
-#define HACK
-
-
 struct map process_list;
 
 struct main_args
 {
-  /* Hint: When try to interpret C-declarations, read from right to
-   * left! It is often easier to get the correct interpretation,
-   * altough it does not always work. */
 
-  /* Variable "ret" that stores address (*ret) to a function taking no
-   * parameters (void) and returning nothing. */
   void (*ret)(void);
-
-  /* Just a normal integer. */
   int argc;
-
-  /* Variable "argv" that stores address to an address storing char.
-   * That is: argv is a pointer to char*
-   */
   char** argv;
 };
-/* Replace calls to STACK_DEBUG with calls to printf. All such calls
- * easily removed later by replacing with nothing. */
+
 #define STACK_DEBUG(...) //printf(__VA_ARGS__)
 
 void* setup_main_stack(const char* command_line, void* stack_top)
 {
-  /* Variable "esp" stores an address, and at the memory loaction
-   * pointed out by that address a "struct main_args" is found.
-   * That is: "esp" is a pointer to "struct main_args" */
   struct main_args* esp;
   int argc;
   int total_size;
   int line_size;
-  /* "cmd_line_on_stack" and "ptr_save" are variables that each store
-   * one address, and at that address (the first) char (of a possible
-   * sequence) can be found. */
+
   char* cmd_line_on_stack;
-  //char* ptr_save;
-  //int i = 0;
+
 
   /* CALCULate the bytes needed to store the command_line */
   line_size = strlen(command_line) + 1;
@@ -136,8 +114,7 @@ void* setup_main_stack(const char* command_line, void* stack_top)
   return esp; /* the new stack top */
 }
 
-/* This function is called at boot time (threads/init.c) to initialize
- * the process subsystem. */
+
 void process_init(void)
 {
   map_init(&process_list);

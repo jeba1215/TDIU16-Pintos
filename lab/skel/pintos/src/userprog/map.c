@@ -11,7 +11,7 @@ bool valid_key(int k){
 
 void map_init(struct map* m){
   int i;
-  for(i=2; i<MAP_SIZE; ++i){
+  for(i=0; i<MAP_SIZE; ++i){
     m->content[i] = NULL;
   }
 }
@@ -49,16 +49,19 @@ value_t map_remove(struct map* m, key_t k){
 
 void map_for_each(struct map* m,  void (*exec)(key_t k, value_t v, int aux), int aux){
   int i;
-  for(i=0; i<MAP_SIZE; ++i){
-    exec(i, m->content[i], aux);
+  for(i=2; i<MAP_SIZE; ++i){
+    if(m->content[i] != NULL)
+      exec(i, m->content[i], aux);
   }
 }
 
 void map_remove_if(struct map* m,  bool (*cond)(key_t k, value_t v, int aux), int aux){
   int i;
-  for(i=0; i<MAP_SIZE; ++i){
-    if( cond(i, m->content[i], aux) ){
-      map_remove(m, i);     
-    }
+  for(i=2; i<MAP_SIZE; ++i){
+    if(m->content[i])
+      if( cond(i, m->content[i], aux) ){
+	map_remove(m, i);     
+      }
   }
 }
+
