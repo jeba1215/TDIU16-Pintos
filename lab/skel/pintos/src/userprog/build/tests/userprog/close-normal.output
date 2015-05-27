@@ -1,0 +1,32 @@
+Copying tests/userprog/close-normal into /tmp/nB10Mchosn.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/nB10Mchosn.dsk...
+Writing command line to /tmp/Gd8rnvfbmN.dsk...
+qemu-system-i386 -hda /tmp/Gd8rnvfbmN.dsk -hdb /tmp/o_HLKoYiX1.dsk -hdc /tmp/nB10Mchosn.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put close-normal put sample.txt run close-normal
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+Calibrating timer...  102,092,800 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 102 sector (51 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'close-normal' into the file system...
+Putting 'sample.txt' into the file system...
+Executing 'close-normal':
+(close-normal) begin
+(close-normal) open "sample.txt"
+(close-normal) close "sample.txt"
+(close-normal) end
+close-normal: exit(0)
+Execution of 'close-normal' complete.
+Timer: 112 ticks
+Thread: 0 idle ticks, 102 kernel ticks, 11 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 90 reads, 214 writes
+hd1:0: 102 reads, 0 writes
+Console: 1738 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

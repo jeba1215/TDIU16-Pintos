@@ -1,0 +1,72 @@
+Copying tests/userprog/exec-once into /tmp/ql2kF3uRVB.dsk...
+Copying tests/userprog/child-simple into /tmp/ql2kF3uRVB.dsk...
+Writing command line to /tmp/ztyb7RuAc9.dsk...
+qemu-system-i386 -hda /tmp/ztyb7RuAc9.dsk -hdb /tmp/0LAwnbEeS7.dsk -hdc /tmp/ql2kF3uRVB.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put exec-once put child-simple run exec-once
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  39,270,400 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 197 sector (98 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'exec-once' into the file system...
+Putting 'child-simple' into the file system...
+Executing 'exec-once':
+# main#1: process_execute("exec-once") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("exec-once", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# exec-once#3: start_process("exec-once") ENTERED
+# Loading file: exec-once
+# Loading done
+# exec-once#3: start_process(...): load returned 1
+# exec-once#3: start_process("exec-once") DONE
+(exec-once) begin
+# exec-once#3: process_execute("child-simple") ENTERED
+# Command line is valid
+#  parent is: 2
+# exec-once#3: thread_create("child-simple", ...) RETURNS 4
+# after create_thread 1, thread_id: 4
+# after create_thread 2
+# after create_thread 3
+# Command Line: exec-once
+# after create_thread 4
+# main#1: process_execute("exec-once") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# child-simple#4: start_process("child-simple") ENTERED
+# Loading file: child-simple
+# Loading done
+# child-simple#4: start_process(...): load returned 1
+# child-simple#4: start_process("child-simple") DONE
+(child-simple) run
+# child-simple#4: process_cleanup() ENTERED
+child-simple: exit(81)
+# child-simple#4: process_cleanup() DONE with status 81
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-simple
+# after create_thread 4
+# exec-once#3: process_execute("child-simple") RETURNS 3
+# exec-once#2: process_wait(3) ENTERED
+# exec-once#3: process_wait(3) RETURNS 81
+(exec-once) end
+# exec-once#3: process_cleanup() ENTERED
+exec-once: exit(0)
+# exec-once#3: process_cleanup() DONE with status 0
+# main#1: process_wait(2) RETURNS 0
+Execution of 'exec-once' complete.
+# Preparing to power off...
+Timer: 127 ticks
+Thread: 1 idle ticks, 105 kernel ticks, 22 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 122 reads, 404 writes
+hd1:0: 197 reads, 0 writes
+Console: 2396 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

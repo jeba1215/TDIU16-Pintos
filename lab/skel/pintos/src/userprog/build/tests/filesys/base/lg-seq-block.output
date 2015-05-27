@@ -1,0 +1,35 @@
+Copying tests/filesys/base/lg-seq-block into /tmp/FYlBWbucCl.dsk...
+Writing command line to /tmp/NebJItve9y.dsk...
+qemu-system-i386 -hda /tmp/NebJItve9y.dsk -hdb /tmp/tYZPVYMXjr.dsk -hdc /tmp/FYlBWbucCl.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put lg-seq-block run lg-seq-block
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+Calibrating timer...  67,891,200 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 104 sector (52 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'lg-seq-block' into the file system...
+Executing 'lg-seq-block':
+(lg-seq-block) begin
+(lg-seq-block) create "noodle"
+(lg-seq-block) open "noodle"
+(lg-seq-block) writing "noodle"
+(lg-seq-block) close "noodle"
+(lg-seq-block) open "noodle" for verification
+(lg-seq-block) verified contents of "noodle"
+(lg-seq-block) close "noodle"
+(lg-seq-block) end
+lg-seq-block: exit(0)
+Execution of 'lg-seq-block' complete.
+Timer: 157 ticks
+Thread: 0 idle ticks, 93 kernel ticks, 64 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 532 reads, 663 writes
+hd1:0: 104 reads, 0 writes
+Console: 1853 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

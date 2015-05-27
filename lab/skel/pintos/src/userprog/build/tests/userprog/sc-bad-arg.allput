@@ -1,0 +1,48 @@
+Copying tests/userprog/sc-bad-arg into /tmp/DurMnKtTAg.dsk...
+Writing command line to /tmp/ex1e6DqEpQ.dsk...
+qemu-system-i386 -hda /tmp/ex1e6DqEpQ.dsk -hdb /tmp/M22Pc9dMre.dsk -hdc /tmp/DurMnKtTAg.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put sc-bad-arg run sc-bad-arg
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  78,848,000 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'sc-bad-arg' into the file system...
+Executing 'sc-bad-arg':
+# main#1: process_execute("sc-bad-arg") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("sc-bad-arg", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# sc-bad-arg#3: start_process("sc-bad-arg") ENTERED
+# Loading file: sc-bad-arg
+# Loading done
+# sc-bad-arg#3: start_process(...): load returned 1
+# sc-bad-arg#3: start_process("sc-bad-arg") DONE
+(sc-bad-arg) begin
+# sc-bad-arg#3: process_cleanup() ENTERED
+sc-bad-arg: exit(-1)
+# sc-bad-arg#3: process_cleanup() DONE with status -1
+# after create_thread 2
+# after create_thread 3
+# Command Line: sc-bad-arg
+# after create_thread 4
+# main#1: process_execute("sc-bad-arg") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# main#1: process_wait(2) RETURNS -1
+Execution of 'sc-bad-arg' complete.
+# Preparing to power off...
+Timer: 93 ticks
+Thread: 1 idle ticks, 87 kernel ticks, 6 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 59 reads, 206 writes
+hd1:0: 99 reads, 0 writes
+Console: 1551 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

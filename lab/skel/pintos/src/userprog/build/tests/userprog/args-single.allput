@@ -1,0 +1,53 @@
+Copying tests/userprog/args-single into /tmp/arUviKTFXg.dsk...
+Writing command line to /tmp/LVdyX2koWC.dsk...
+qemu-system-i386 -hda /tmp/LVdyX2koWC.dsk -hdb /tmp/DUkz8bKW7G.dsk -hdc /tmp/arUviKTFXg.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put args-single run 'args-single onearg'
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  75,161,600 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 98 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'args-single' into the file system...
+Executing 'args-single onearg':
+# main#1: process_execute("args-single onearg") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("args-single", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# args-single#3: start_process("args-single onearg") ENTERED
+# Loading file: args-single
+# Loading done
+# args-single#3: start_process(...): load returned 1
+# args-single#3: start_process("args-single onearg") DONE
+(args) begin
+(args) argc = 2
+(args) argv[0] = 'args-single'
+(args) argv[1] = 'onearg'
+(args) argv[2] = null
+(args) end
+# args-single#3: process_cleanup() ENTERED
+args-single: exit(0)
+# args-single#3: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# Command Line: args-single onearg
+# after create_thread 4
+# main#1: process_execute("args-single onearg") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# main#1: process_wait(2) RETURNS 0
+Execution of 'args-single onearg' complete.
+# Preparing to power off...
+Timer: 100 ticks
+Thread: 0 idle ticks, 89 kernel ticks, 12 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 59 reads, 204 writes
+hd1:0: 98 reads, 0 writes
+Console: 1726 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

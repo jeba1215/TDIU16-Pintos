@@ -1,0 +1,56 @@
+Copying tests/filesys/base/lg-seq-random into /tmp/KjJ6ouxRfY.dsk...
+Writing command line to /tmp/g_TSjDCQvt.dsk...
+qemu-system-i386 -hda /tmp/g_TSjDCQvt.dsk -hdb /tmp/eg4c0dqgcE.dsk -hdc /tmp/KjJ6ouxRfY.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put lg-seq-random run lg-seq-random
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  62,054,400 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 104 sector (52 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'lg-seq-random' into the file system...
+Executing 'lg-seq-random':
+# main#1: process_execute("lg-seq-random") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("lg-seq-random", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# lg-seq-random#3: start_process("lg-seq-random") ENTERED
+# Loading file: lg-seq-random
+# Loading done
+# lg-seq-random#3: start_process(...): load returned 1
+# lg-seq-random#3: start_process("lg-seq-random") DONE
+(lg-seq-random) begin
+(lg-seq-random) create "nibble"
+# after create_thread 2
+# after create_thread 3
+# Command Line: lg-seq-random
+# after create_thread 4
+# main#1: process_execute("lg-seq-random") RETURNS 2
+# main#0: process_wait(2) ENTERED
+(lg-seq-random) open "nibble"
+(lg-seq-random) writing "nibble"
+(lg-seq-random) close "nibble"
+(lg-seq-random) open "nibble" for verification
+(lg-seq-random) verified contents of "nibble"
+(lg-seq-random) close "nibble"
+(lg-seq-random) end
+# lg-seq-random#3: process_cleanup() ENTERED
+lg-seq-random: exit(0)
+# lg-seq-random#3: process_cleanup() DONE with status 0
+# main#1: process_wait(2) RETURNS 0
+Execution of 'lg-seq-random' complete.
+# Preparing to power off...
+Timer: 159 ticks
+Thread: 0 idle ticks, 97 kernel ticks, 63 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 502 reads, 668 writes
+hd1:0: 104 reads, 0 writes
+Console: 1880 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

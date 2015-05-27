@@ -1,0 +1,53 @@
+Copying tests/filesys/base/sm-create into /tmp/VWv8lgsS1b.dsk...
+Writing command line to /tmp/jrJ4PUNpjX.dsk...
+qemu-system-i386 -hda /tmp/jrJ4PUNpjX.dsk -hdb /tmp/PRntIIUMyf.dsk -hdc /tmp/VWv8lgsS1b.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put sm-create run sm-create
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  74,956,800 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 104 sector (52 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'sm-create' into the file system...
+Executing 'sm-create':
+# main#1: process_execute("sm-create") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("sm-create", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# sm-create#3: start_process("sm-create") ENTERED
+# Loading file: sm-create
+# Loading done
+# sm-create#3: start_process(...): load returned 1
+# sm-create#3: start_process("sm-create") DONE
+(sm-create) begin
+(sm-create) create "blargle"
+# after create_thread 2
+# after create_thread 3
+# Command Line: sm-create
+# after create_thread 4
+# main#1: process_execute("sm-create") RETURNS 2
+# main#0: process_wait(2) ENTERED
+(sm-create) open "blargle" for verification
+(sm-create) verified contents of "blargle"
+(sm-create) close "blargle"
+(sm-create) end
+# sm-create#3: process_cleanup() ENTERED
+sm-create: exit(0)
+# sm-create#3: process_cleanup() DONE with status 0
+# main#1: process_wait(2) RETURNS 0
+Execution of 'sm-create' complete.
+# Preparing to power off...
+Timer: 110 ticks
+Thread: 0 idle ticks, 94 kernel ticks, 17 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 98 reads, 232 writes
+hd1:0: 104 reads, 0 writes
+Console: 1693 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

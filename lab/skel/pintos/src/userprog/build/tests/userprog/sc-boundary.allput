@@ -1,0 +1,48 @@
+Copying tests/userprog/sc-boundary into /tmp/1zsoCNo7SP.dsk...
+Writing command line to /tmp/lHuUY45xTt.dsk...
+qemu-system-i386 -hda /tmp/lHuUY45xTt.dsk -hdb /tmp/Psj3T4b6Pe.dsk -hdc /tmp/1zsoCNo7SP.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put sc-boundary run sc-boundary
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  120,422,400 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 102 sector (51 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'sc-boundary' into the file system...
+Executing 'sc-boundary':
+# main#1: process_execute("sc-boundary") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("sc-boundary", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# sc-boundary#3: start_process("sc-boundary") ENTERED
+# Loading file: sc-boundary
+# Loading done
+# sc-boundary#3: start_process(...): load returned 1
+# sc-boundary#3: start_process("sc-boundary") DONE
+(sc-boundary) begin
+# sc-boundary#3: process_cleanup() ENTERED
+sc-boundary: exit(42)
+# sc-boundary#3: process_cleanup() DONE with status 42
+# after create_thread 2
+# after create_thread 3
+# Command Line: sc-boundary
+# after create_thread 4
+# main#1: process_execute("sc-boundary") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# main#1: process_wait(2) RETURNS 42
+Execution of 'sc-boundary' complete.
+# Preparing to power off...
+Timer: 102 ticks
+Thread: 0 idle ticks, 94 kernel ticks, 9 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 59 reads, 212 writes
+hd1:0: 102 reads, 0 writes
+Console: 1574 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

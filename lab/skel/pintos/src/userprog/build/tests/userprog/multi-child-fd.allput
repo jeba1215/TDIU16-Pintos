@@ -1,0 +1,78 @@
+Copying tests/userprog/multi-child-fd into /tmp/ikR1H8lx_B.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/ikR1H8lx_B.dsk...
+Copying tests/userprog/child-close into /tmp/ikR1H8lx_B.dsk...
+Writing command line to /tmp/ZeoctKXAex.dsk...
+qemu-system-i386 -hda /tmp/ZeoctKXAex.dsk -hdb /tmp/BJbdACfh81.dsk -hdc /tmp/ikR1H8lx_B.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put multi-child-fd put sample.txt put child-close run multi-child-fd
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  91,545,600 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 215 sector (107 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'multi-child-fd' into the file system...
+Putting 'sample.txt' into the file system...
+Putting 'child-close' into the file system...
+Executing 'multi-child-fd':
+# main#1: process_execute("multi-child-fd") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("multi-child-fd", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# multi-child-fd#3: start_process("multi-child-fd") ENTERED
+# Loading file: multi-child-fd
+# Loading done
+# multi-child-fd#3: start_process(...): load returned 1
+# multi-child-fd#3: start_process("multi-child-fd") DONE
+(multi-child-fd) begin
+(multi-child-fd) open "sample.txt"
+# multi-child-fd#3: process_execute("child-close 2") ENTERED
+# Command line is valid
+#  parent is: 2
+# multi-child-fd#3: thread_create("child-close", ...) RETURNS 4
+# after create_thread 1, thread_id: 4
+# after create_thread 2
+# after create_thread 3
+# Command Line: multi-child-fd
+# after create_thread 4
+# main#1: process_execute("multi-child-fd") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# child-close#4: start_process("child-close 2") ENTERED
+# Loading file: child-close
+# Loading done
+# child-close#4: start_process(...): load returned 1
+# child-close#4: start_process("child-close 2") DONE
+(child-close) begin
+(child-close) end
+# child-close#4: process_cleanup() ENTERED
+child-close: exit(0)
+# child-close#4: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# Command Line: child-close 2
+# after create_thread 4
+# multi-child-fd#3: process_execute("child-close 2") RETURNS 3
+# multi-child-fd#2: process_wait(3) ENTERED
+# multi-child-fd#3: process_wait(3) RETURNS 0
+(multi-child-fd) wait(exec()) = 0
+(multi-child-fd) verified contents of "sample.txt"
+(multi-child-fd) end
+# multi-child-fd#3: process_cleanup() ENTERED
+multi-child-fd: exit(0)
+# multi-child-fd#3: process_cleanup() DONE with status 0
+# main#1: process_wait(2) RETURNS 0
+Execution of 'multi-child-fd' complete.
+# Preparing to power off...
+Timer: 144 ticks
+Thread: 0 idle ticks, 115 kernel ticks, 30 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 168 reads, 442 writes
+hd1:0: 215 reads, 0 writes
+Console: 2713 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...
