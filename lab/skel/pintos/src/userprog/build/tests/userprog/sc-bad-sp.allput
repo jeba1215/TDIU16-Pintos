@@ -1,12 +1,12 @@
-Copying tests/userprog/sc-bad-sp into /tmp/cMazOtjOdJ.dsk...
-Writing command line to /tmp/a6vMAjCFgF.dsk...
-qemu-system-i386 -hda /tmp/a6vMAjCFgF.dsk -hdb /tmp/gQmUoYYmCE.dsk -hdc /tmp/cMazOtjOdJ.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/sc-bad-sp into /tmp/h5OvGW47BE.dsk...
+Writing command line to /tmp/dJ9VCmFuBM.dsk...
+qemu-system-i386 -hda /tmp/dJ9VCmFuBM.dsk -hdb /tmp/ycln_NUUsb.dsk -hdc /tmp/h5OvGW47BE.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put sc-bad-sp run sc-bad-sp
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  26,188,800 loops/s.
+Calibrating timer...  130,867,200 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -37,12 +37,12 @@ sc-bad-sp: exit(-1)
 # main#1: process_wait(2) RETURNS -1
 Execution of 'sc-bad-sp' complete.
 # Preparing to power off...
-Timer: 105 ticks
-Thread: 40 idle ticks, 61 kernel ticks, 5 user ticks
+Timer: 64 ticks
+Thread: 0 idle ticks, 61 kernel ticks, 3 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes
-Console: 1534 characters output
+Console: 1533 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,3 +1,56 @@
-Copying tests/userprog/read-bad-fd into /tmp/yRFBkz6qZN.dsk...
-Writing command line to /tmp/0P61qELM3T.dsk...
-qemu-system-i386 -hda /tmp/0P61qELM3T.dsk -hdb /tmp/GK3Ps1L0NJ.dsk -hdc /tmp/yRFBkz6qZN.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/read-bad-fd into /tmp/PeS8t38nKU.dsk...
+Writing command line to /tmp/Efk_zTWt6l.dsk...
+qemu-system-i386 -hda /tmp/Efk_zTWt6l.dsk -hdb /tmp/lsppkAQrtN.dsk -hdc /tmp/PeS8t38nKU.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put read-bad-fd run read-bad-fd
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  261,734,400 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 100 sector (50 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'read-bad-fd' into the file system...
+Executing 'read-bad-fd':
+# main#1: process_execute("read-bad-fd") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("read-bad-fd", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# read-bad-fd#3: start_process("read-bad-fd") ENTERED
+# Loading file: read-bad-fd
+# Loading done
+# read-bad-fd#3: start_process(...): load returned 1
+# read-bad-fd#3: start_process("read-bad-fd") DONE
+(read-bad-fd) begin
+# map_find returns null
+# map_find returns null
+# map_find returns null
+# map_find returns null
+# map_find returns null
+# map_find returns null
+# map_find returns null
+(read-bad-fd) end
+# read-bad-fd#3: process_cleanup() ENTERED
+read-bad-fd: exit(0)
+# read-bad-fd#3: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# Command Line: read-bad-fd
+# after create_thread 4
+# main#1: process_execute("read-bad-fd") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# main#1: process_wait(2) RETURNS 0
+Execution of 'read-bad-fd' complete.
+# Preparing to power off...
+Timer: 69 ticks
+Thread: 0 idle ticks, 64 kernel ticks, 5 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 59 reads, 208 writes
+hd1:0: 100 reads, 0 writes
+Console: 1756 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

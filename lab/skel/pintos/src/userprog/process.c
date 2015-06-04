@@ -90,18 +90,9 @@ void* setup_main_stack(const char* command_line, void* stack_top)
   /* build argv array and insert null-characters after each word */
   char* cmd_copy = (char*)command_line;
   int i = 0;
-
-  for (token = strtok_r (cmd_copy, " ", &ptr_save); token != NULL;
-       token = strtok_r (NULL, " ", &ptr_save))
+  for (token = strtok_r (cmd_line_on_stack, " ", &ptr_save); token != NULL; token = strtok_r (NULL, " ", &ptr_save))
     {
-      strlcpy(cmd_line_on_stack, token, strlen(token)+1);
-      
-      esp->argv[i] = cmd_line_on_stack;
-
-      cmd_line_on_stack += strlen(token);
-      strlcpy(cmd_line_on_stack,"\0",1);
-      ++cmd_line_on_stack;
-      ++i;
+      esp->argv[i++] = token;
     }
 
   esp->argv[argc] = NULL;

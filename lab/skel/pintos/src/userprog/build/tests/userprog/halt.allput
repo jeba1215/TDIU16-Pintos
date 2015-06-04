@@ -1,12 +1,12 @@
-Copying tests/userprog/halt into /tmp/5XKOvlts72.dsk...
-Writing command line to /tmp/2cU30nimAN.dsk...
-qemu-system-i386 -hda /tmp/2cU30nimAN.dsk -hdb /tmp/E7Yh1gYpFU.dsk -hdc /tmp/5XKOvlts72.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/halt into /tmp/c1PyQ0hNin.dsk...
+Writing command line to /tmp/EvYvuhJVnt.dsk...
+qemu-system-i386 -hda /tmp/EvYvuhJVnt.dsk -hdb /tmp/NRivT9LbGn.dsk -hdc /tmp/c1PyQ0hNin.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put halt run halt
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  13,094,400 loops/s.
+Calibrating timer...  314,163,200 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -28,8 +28,8 @@ Executing 'halt':
 # Preparing to power off...
 # WARNING: About to poweroff with 2 other threads still running!
 They will not get the chance to complete.
-Timer: 97 ticks
-Thread: 35 idle ticks, 58 kernel ticks, 5 user ticks
+Timer: 74 ticks
+Thread: 0 idle ticks, 72 kernel ticks, 3 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes

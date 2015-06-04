@@ -197,8 +197,6 @@ inode_close (struct inode *inode)
   if (inode == NULL)
     return;
 
-
-
   /* Release resources if this was the last opener. */
   lock_acquire(&inode_list_lock);
   lock_acquire(&inode->open_cnt_lock);
@@ -209,7 +207,6 @@ inode_close (struct inode *inode)
 
     /* Remove from inode list. */
     list_remove (&inode->elem);
-
 
     /* Deallocate blocks if the file is marked as removed. */
     if (inode->removed)

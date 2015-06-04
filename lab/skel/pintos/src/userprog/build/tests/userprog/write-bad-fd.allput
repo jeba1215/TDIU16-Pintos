@@ -1,0 +1,56 @@
+Copying tests/userprog/write-bad-fd into /tmp/uCYu5aifFf.dsk...
+Writing command line to /tmp/P2PGAnYEuB.dsk...
+qemu-system-i386 -hda /tmp/P2PGAnYEuB.dsk -hdb /tmp/0MlG248cyn.dsk -hdc /tmp/uCYu5aifFf.dsk -m 4 -net none -monitor null -nographic
+Kernel command line: -q -f put write-bad-fd run write-bad-fd
+Pintos booting with 4,088 kB RAM...
+371 pages available in kernel pool.
+371 pages available in user pool.
+# main#1: thread_create("idle", ...) RETURNS 2
+Calibrating timer...  419,020,800 loops/s.
+hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
+hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
+hd1:0: detected 100 sector (50 kB) disk, model "QEMU HARDDISK", serial "QM00003"
+Formatting file system...done.
+Boot complete.
+Putting 'write-bad-fd' into the file system...
+Executing 'write-bad-fd':
+# main#1: process_execute("write-bad-fd") ENTERED
+# Command line is valid
+#  parent is: 0
+# main#1: thread_create("write-bad-fd", ...) RETURNS 3
+# after create_thread 1, thread_id: 3
+# write-bad-fd#3: start_process("write-bad-fd") ENTERED
+# Loading file: write-bad-fd
+# Loading done
+# write-bad-fd#3: start_process(...): load returned 1
+# write-bad-fd#3: start_process("write-bad-fd") DONE
+(write-bad-fd) begin
+# map_find returns null
+# map_find returns null
+# map_find returns null
+# map_find returns null
+# map_find returns null
+# map_find returns null
+# map_find returns null
+(write-bad-fd) end
+# write-bad-fd#3: process_cleanup() ENTERED
+write-bad-fd: exit(0)
+# write-bad-fd#3: process_cleanup() DONE with status 0
+# after create_thread 2
+# after create_thread 3
+# Command Line: write-bad-fd
+# after create_thread 4
+# main#1: process_execute("write-bad-fd") RETURNS 2
+# main#0: process_wait(2) ENTERED
+# main#1: process_wait(2) RETURNS 0
+Execution of 'write-bad-fd' complete.
+# Preparing to power off...
+Timer: 74 ticks
+Thread: 0 idle ticks, 69 kernel ticks, 5 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 59 reads, 208 writes
+hd1:0: 100 reads, 0 writes
+Console: 1776 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

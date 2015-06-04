@@ -1,12 +1,12 @@
-Copying tests/userprog/exit into /tmp/TZXQVSWZKx.dsk...
-Writing command line to /tmp/YZlIpeVrv7.dsk...
-qemu-system-i386 -hda /tmp/YZlIpeVrv7.dsk -hdb /tmp/gf_gjz_Tqv.dsk -hdc /tmp/TZXQVSWZKx.dsk -m 4 -net none -monitor null -nographic
+Copying tests/userprog/exit into /tmp/_pBsGSWHE9.dsk...
+Writing command line to /tmp/memYAa7Zcu.dsk...
+qemu-system-i386 -hda /tmp/memYAa7Zcu.dsk -hdb /tmp/w4tmfaw65F.dsk -hdc /tmp/_pBsGSWHE9.dsk -m 4 -net none -monitor null -nographic
 Kernel command line: -q -f put exit run exit
 Pintos booting with 4,088 kB RAM...
 371 pages available in kernel pool.
 371 pages available in user pool.
 # main#1: thread_create("idle", ...) RETURNS 2
-Calibrating timer...  52,377,600 loops/s.
+Calibrating timer...  356,761,600 loops/s.
 hd0:0: detected 161 sector (80 kB) disk, model "QEMU HARDDISK", serial "QM00001"
 hd0:1: detected 4,032 sector (1 MB) disk, model "QEMU HARDDISK", serial "QM00002"
 hd1:0: detected 99 sector (49 kB) disk, model "QEMU HARDDISK", serial "QM00003"
@@ -37,12 +37,12 @@ exit: exit(57)
 # main#1: process_wait(2) RETURNS 57
 Execution of 'exit' complete.
 # Preparing to power off...
-Timer: 100 ticks
-Thread: 38 idle ticks, 60 kernel ticks, 2 user ticks
+Timer: 77 ticks
+Thread: 0 idle ticks, 76 kernel ticks, 2 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 206 writes
 hd1:0: 99 reads, 0 writes
-Console: 1439 characters output
+Console: 1438 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
